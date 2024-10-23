@@ -8,7 +8,7 @@ function resolverEcuacionSegundoGrado($a, $b, $c): array {
         return [ (-$b + sqrt($discriminante))/(2*$a),(-$b - sqrt($discriminante))/(2*$a) ];
     }
 }
-
+        
 ?>
 
 <!DOCTYPE html>

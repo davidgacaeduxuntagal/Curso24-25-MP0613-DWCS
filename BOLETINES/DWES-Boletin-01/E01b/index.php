@@ -1,6 +1,6 @@
 <?php
     /* 
-        Otra forma de hacer lo mismo
+        Otra forma de hacer lo mismo 
 
     */ 
     // Activar para depurar

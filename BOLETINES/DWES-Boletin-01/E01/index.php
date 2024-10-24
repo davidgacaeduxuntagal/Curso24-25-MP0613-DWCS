@@ -47,6 +47,7 @@ MARCA;
         echo "<p id='resto'>El resto es: " . ($numero1 % $numero2) . "</p>";
     }
 ?>
+        // TODO: falta implementar el botonReset
         <button id="botonEnviar" type="submit">Enviar</button>      
         <button id="botonReset">Reset</button> 
     </form>

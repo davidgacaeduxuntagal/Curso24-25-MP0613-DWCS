@@ -1,4 +1,8 @@
 <?php
+    /* 
+        Otra forma de hacer lo mismo
+
+    */ 
     // Activar para depurar
     ob_end_flush();
     ob_implicit_flush();

@@ -23,7 +23,7 @@
         <input type="number"  id="numero2" name="entero2" value="{$entero2}"  />
     </p>
     <p>
-        <label for="numero3">Introduzca tercer entero (s):</label>
+        <label for="numero3">Introduzca tercer entero:</label>
         <input type="number" id="numero3" name="entero3" value="{$entero3}" />
     </p>
 MARCA;

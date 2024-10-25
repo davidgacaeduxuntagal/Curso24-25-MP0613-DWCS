@@ -25,7 +25,7 @@
     // Comprobamos que el estado no ha sido manipulado en el cliente:
     if ( $estado === "NOVALIDO" || $estado < 0 || $estado > 1) {
         throw new Exception("ERROR: han manipulado el HTML en cliente");
-    } else {
+    } else {    
         $estado = intval($estado);
     }
 

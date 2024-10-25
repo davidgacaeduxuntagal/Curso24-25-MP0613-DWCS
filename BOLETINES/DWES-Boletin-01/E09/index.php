@@ -11,6 +11,11 @@
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>"  method="get">
 <?php
     $entero = empty($_GET['entero']) ? "": $_GET['entero'];
+
+    if( !empty($_GET['botonReset']) ) {
+        $entero = ""; 
+    }
+
     echo <<<MARCA
     <p>
         <label for="numero">Introduzca un entero positivo de 5 dígito máximo:</label>
@@ -19,10 +24,13 @@
 MARCA;
 
     if ( $entero === "" )  {
-        echo <<<MARCA
-        <p style="color: red">Introduzca el entero solicitado, por favor</p>
-        <p id="digitos">&nbsp;</p>
-MARCA;
+        if( !empty($_GET['botonEviar']) ) {
+            echo '<p style="color: red">Introduzca el entero solicitado, por favor</p>';
+        } else {
+            echo '<p">&nbsp;</p>';
+        }
+
+        echo '<p id="digitos">&nbsp;</p>';
     } else {
        if ( $entero >= 0) {
             $digitos = $entero % 10;
@@ -46,8 +54,8 @@ MARCA;
         }
     }
 ?>
-        <button id="botonEnviar" type="submit">Enviar</button>      
-        <button id="botonReset">Reset</button> 
+        <button id="botonEnviar" type="submit" name="botonEnviar" value="Enviar">Enviar</button>      
+        <button id="botonReset" type="submit" name="botonReset" value="Reset">Reset</button> 
     </form>
 </body>
 </html>

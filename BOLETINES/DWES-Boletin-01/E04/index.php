@@ -10,9 +10,19 @@
 
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>"  method="get">
 <?php
+    // Este es un ejemplo inicial y no estamos metiendo código para:
+    //  - validar los números enteros
+    //  - convertir explícitamente los string a enteros
     $entero1 = empty($_GET['entero1']) ? "": $_GET['entero1'];
     $entero2 = empty($_GET['entero2']) ? "": $_GET['entero2'];
     $entero3 = empty($_GET['entero3']) ? "": $_GET['entero3'];
+
+    if( !empty($_GET['botonReset']) ) {
+        $entero1 =  "";
+        $entero2 =  "";
+        $entero3 =  "";
+    }    
+
     echo <<<MARCA
     <p>
         <label for="numero1">Introduzca primer entero:</label>
@@ -29,8 +39,12 @@
 MARCA;
 
     if ( $entero1 === "" || $entero2 === "" || $entero3 === "" )  {
+        if( !empty($_GET['botonEnviar']) ) {
+            echo '<p style="color: red">Rellene todos los campos, por favor</p>';
+        } else {
+            echo '<p>&nbsp;</p>';
+        }
         echo <<<MARCA
-        <p style="color: red">Rellene todos los campos, por favor</p>
         <p id="suma">&nbsp;</p>
         <p id="media">&nbsp;</p>
         <p id="producto">&nbsp;</p>
@@ -67,8 +81,8 @@ MARCA;
         echo "<p id='menor'>El menor es: " . $menor  . "</p>";
     }
 ?>
-        <button id="botonEnviar" type="submit">Enviar</button>      
-        <button id="botonReset">Reset</button> 
+        <button id="botonEnviar" type="submit" name="botonEnviar" value="Enviar">Enviar</button>      
+        <button id="botonReset" type="submit" name="botonReset" value="Reset">Reset</button> 
     </form>
 </body>
 </html>

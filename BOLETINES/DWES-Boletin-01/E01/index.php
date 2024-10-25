@@ -10,6 +10,11 @@
 
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>"  method="get">
 <?php
+    if( !empty($_GET['botonReset']) ) {
+        unset($_GET['numero1']);
+        unset($_GET['numero1']);
+    }
+    
     if (empty($_GET['numero1']) || empty($_GET['numero2']) ) {
         echo <<<MARCA
         <p>
@@ -47,9 +52,8 @@ MARCA;
         echo "<p id='resto'>El resto es: " . ($numero1 % $numero2) . "</p>";
     }
 ?>
-        // TODO: falta implementar el botonReset
-        <button id="botonEnviar" type="submit">Enviar</button>      
-        <button id="botonReset">Reset</button> 
+        <button id="botonEnviar" type="submit" name="botonEnviar" value="Enviar">Enviar</button>      
+        <button id="botonReset" type="submit" name="botonReset" value="Reset">Reset</button> 
     </form>
 </body>
 </html>

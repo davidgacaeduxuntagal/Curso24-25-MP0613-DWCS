@@ -48,7 +48,7 @@
 
         case 2: // Imprimir datatos
             $estado = 2;
-            $interesesTotales = floatval($cantidad) * floatval(str_replace(",", ".", $interes))* $duracion;
+            $interesesTotales = floatval($cantidad) * floatval(str_replace(",", ".", $interes)) * $duracion;
             $cuotaMensual     = (floatval($cantidad) + $interesesTotales) / ($duracion * 12);
             $interesesTotales = number_format($interesesTotales, 2, ",", "");
             $cuotaMensual     = number_format($cuotaMensual, 2, ",", "");

@@ -13,8 +13,8 @@
     // Comprobamos todas las variables, por si es manipulado el HTML en el cliente:
     $estado   = (!isset($_GET['estado'])) ? 0 : intval($_GET['estado']);
     $numero   = (!isset($_GET['numero'])   || preg_match("/^\d+$/", $_GET['numero']) !== 1)   ? "INVALIDO" : intval($_GET['numero']);
-    $mayor1   = (!isset($_GET['mayor1'])    || preg_match("/^\d+$/", $_GET['mayor1']) !== 1)  ? "INVALIDO" : intval($_GET['mayor1']); 
-    $mayor2   = (!isset($_GET['mayor2'])    || preg_match("/^\d+$/", $_GET['mayor2']) !== 1)  ? "INVALIDO" : intval($_GET['mayor2']); 
+    $mayor1   = (!isset($_GET['mayor1'])   || preg_match("/^\d+$/", $_GET['mayor1']) !== 1)  ? "INVALIDO" : intval($_GET['mayor1']); 
+    $mayor2   = (!isset($_GET['mayor2'])   || preg_match("/^\d+$/", $_GET['mayor2']) !== 1)  ? "INVALIDO" : intval($_GET['mayor2']); 
     $contador = (!isset($_GET['contador']) || preg_match("/^\d+$/", $_GET['contador']) !== 1) ? "INVALIDO" : intval($_GET['contador']);
        
 

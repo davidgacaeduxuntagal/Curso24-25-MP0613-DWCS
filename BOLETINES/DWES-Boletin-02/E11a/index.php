@@ -4,52 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DWES-PHP-B02-11</title>
+    <title>DWES-PHP-B02-11a</title>
 </head>
 <body style="font-family: monospace">
 
-    <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
-
-        <div class="entrada">
-            <p>
-                <label for="numeroBinario">Introduzca un número binario de 5 dígitos máximo:</label>
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>"  method="get">
 <?php
-    $numeroDecimal = '';
-    if ( !isset($_GET['numeroBinario']) ) {
-       echo "<input type='text' id='numeroBinario' name='numeroBinario' />";
-       echo "</p></div>";
-    } else if ( empty($_GET['numeroBinario'])) {
-        echo "<input type='text' id='numeroBinario' name='numeroBinario' />";
-        echo "<span style='color: red'> <-- introduzca el número binario, por favor</span>";
-        echo "</p></div>";
-    } else {
-        echo "<input type='text' id='numeroBinario' name='numeroBinario' value=\"{$_GET['numeroBinario']}\" />";
-        echo "</p></div>";        
-        $numeroBinario = $_GET['numeroBinario'];
-        $numeroDecimal = 0;
-        $longitudNumeroBinario = strlen($numeroBinario);
+    $estado  = (!isset($_GET['estado'])) ? 0 : intval($_GET['estado']);
+    $numero  = (!isset($_GET['numero'])  || preg_match("/^[1-9]\d*$/", $_GET['numero']) !== 1 ) ? "INVALIDO" : intval($_GET['numero']);
 
-        if ($longitudNumeroBinario > 5) {
-            $numeroDecimal = "<span style='color: red'>El número es demasiado largo: introduzca 5 dígitos binarios máximo, por favor</span>";
-        } else {
-            $numeroDecimal = 0;
-            for($i = ($longitudNumeroBinario - 1); $i >= 0; $i--) {
-                if ( $numeroBinario[$i] != "1" && $numeroBinario[$i] != "0" ) {
-                    $numeroDecimal =  "<span style='color: red'>El número introducido tiene en su posición " . 
-                         (( $longitudNumeroBinario - 1) - $i) . 
-                         " el caracter inválido " . $numeroBinario[$i] . "</span>";
-                } else {
-                    $numeroDecimal += ($numeroBinario[$i] * (1<<(($longitudNumeroBinario - 1) - $i)));
+    switch($estado) {
+        case 0:
+            $estado = 1;
+            include "formulario1.php";
+            break;
+
+        case 1: 
+            $estado = 1;
+            if ( $numero === "INVALIDO" ) {
+                include "formulario2.php";
+            } else {
+                $temp = $numero;
+                $invertido = "";
+                while ( $temp > 0 ) {
+                    $invertido .= (int)($temp % 10);
+                    $temp = (int)($temp / 10);
                 }
+                include "formulario3.php";
             }
-        }
+
+            break;
+
+        default: throw new Exception("Estado no válido: " . $estado);
     }
+      
 ?>
-        <div class="salida">
-            <p id="numeroDecimal">El número decimal correspondiente es:&nbsp;<?php echo "{$numeroDecimal}";?></p>
-        </div> 
-            <button id="botonEnviar">Enviar</button>      
-            <button id="botonReset">Reset</button> 
-    </form>
+</form>
 </body>
 </html>

@@ -43,7 +43,7 @@ MARCA;
     }
 ?>
         <button id="botonEnviar" type="submit">Enviar</button>      
-        <button id="botonReset">Reset</button> 
+        <button id="botonReset">Reset</button>                      <!-- ejercicio: falta implementar botón Reset -->
     </form>
 </body>
 </html>

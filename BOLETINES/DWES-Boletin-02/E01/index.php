@@ -15,8 +15,14 @@ define('IMPUESTO_AUTONOMICO', 0.04);
 
     <div class="entrada">
 <?php 
-    $primeraVez = false;
-    echo '<input type="hidden"  name="primeraVez" value="false" />';
+    $primeraVez = false;  // permite indicar cuándo sacar el mensaje de error o no "Introduzca el importe, por favor"
+    echo '<input type="hidden"  name="primeraVez" value="false" />';  // añadirmos "primeraVez" como variable/valor ocultos: 
+                                                                      // la primera que se invoca la página no tiene CGI o valores añadidos al URL
+
+    if( !empty($_GET['botonReset']) ) {
+        unset($_GET['primeraVez']);
+    }    
+
     if ( !isset($_GET['primeraVez']) ) {
         $totalMensualVentas = 0.00;
         $primeraVez = true;
@@ -38,7 +44,7 @@ MARCA;
         <p>
             <label for="nombreMes">Introduzca el nombre del mes: </label>
             <select id="nombreMes" name="nombreMes">
-                <option value="Enero" selected>Enero</option>
+                <option value="Enero">Enero</option>
                 <option value="Febrero">Febrero</option>
                 <option value="Marzo">Marzo</option>
                 <option value="Abril">Abril</option>
@@ -83,8 +89,8 @@ MARCA;
         </div> 
 MARCA;
 ?>
-        <button id="botonEnviar" type="submit">Enviar</button>      
-        <button id="botonReset">Reset</button>
+        <button id="botonEnviar" type="submit" name="botonEnviar" value="Enviar">Enviar</button>      
+        <button id="botonReset" type="submit" name="botonReset" value="Reset">Reset</button> 
     </form>
 </body>
 </html>

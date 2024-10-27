@@ -46,7 +46,7 @@ MARCA;
                     echo '.';
                 }
             }
-            $fila < $medio ? ++$siAsterisco : --$siAsterisco;
+            $fila < $medio ? ++$siAsterisco : --$siAsterisco;  // si ya hemos dibujado el medio $fila >= medio, el ancho disminuye
             echo '<br>';
         }
 

@@ -37,9 +37,10 @@ MARCA;
         // Dibujar parte superior rombo:
         // NOTA: en vez de un espacio, imprimiré un "." (punto) para que puedas
         //  apreciar las diferencias entre distintas soluciones.
-        for ($fila = 1; $fila <= $medio; $fila++) {
-            for ($columna = 1; $columna <= $medio + $fila - 1; $columna++) {
-                if ( ($columna > $medio - $fila) && ($columna < $medio + $fila) ) {
+        // $anchoFila: número asteriscos desde medio del rombo hasta un lado 
+        for ($anchoFila = 1; $anchoFila <= $medio; $anchoFila++) {
+            for ($columna = 1; $columna <= $medio + $anchoFila - 1; $columna++) {
+                if ( ($columna > $medio - $anchoFila) && ($columna < $medio + $anchoFila) ) {
                     echo '*';
                 } else {
                     echo '.';
@@ -49,9 +50,9 @@ MARCA;
         }
 
         // Dibujar parte inferior rombo:
-        for ($fila = $medio - 1 ; $fila >= 1; $fila--) {
-            for ($columna = 1; $columna <=  $medio + $fila - 1; $columna++) {
-                if ( ($columna > $medio - $fila) && ($columna < $medio + $fila ) ) {
+        for ($anchoFila = $medio - 1 ; $anchoFila >= 1; $anchoFila--) {
+            for ($columna = 1; $columna <= $medio + $anchoFila - 1; $columna++) {
+                if ( ($columna > $medio - $anchoFila) && ($columna < $medio + $anchoFila ) ) {
                     echo '*';
                 } else {
                     echo '.';

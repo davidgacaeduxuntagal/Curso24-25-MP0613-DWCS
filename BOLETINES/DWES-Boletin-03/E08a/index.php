@@ -39,7 +39,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DWES-PHP-B03-08</title>
+    <title>DWES-PHP-B03-08a</title>
 </head>
 <body >
 
@@ -81,10 +81,13 @@ MARCA;
         // Comprobar si la entrada es válida:
         $temp = calcularDiasMes($mes, $anno);
         if ( $mes < 1 || $mes > 12)  {
-            echo "<p>" . "El número de mes ${$mes} no es válido, por favor, introduzca valor correcto" . "</p>";
-        } else if ( $dia > $temp ) {
+            echo "<p>" . "El número de mes {$mes} no es válido, por favor, introduzca valor correcto" . "</p>";
+        } else if ( $dia > $temp || $dia < 1) {
             echo "<p>" . "Número de días no válido para este mes: por favor, introduzca valor correcto" . "[1..{$temp}]" . "</p>";
-        } else {
+        } else if ( $anno <= 0 ) {
+            echo "<p>" . "Número de año incorrecto: debe ser mayor que 0" . "</p>";
+        }
+        else {
             echo "<p>". "El día de semana es: " . diaDeLaSemana($dia, $mes, $anno) . "</p>"; 
         }
     }

@@ -35,9 +35,10 @@ MARCA;
         echo "<pre style=\"font-family: monospace\">";
         $medio = floor($entero / 2) + 1;
         // Dibujar parte superior rombo:
-        for ($fila = 1; $fila <= $medio; $fila++) {
+        // $anchoFila: longitud desde medio hasta un lado 
+        for ($anchoFila = 1; $anchoFila <= $medio; $anchoFila++) {
             for ($columna = 1; $columna <= $entero; $columna++) {
-                if ( ($columna > $medio - $fila) && ($columna < $medio + $fila) ) {
+                if ( ($columna > $medio - $anchoFila) && ($columna < $medio + $anchoFila) ) {
                     echo '*';
                 } else {
                     echo ' ';
@@ -47,9 +48,9 @@ MARCA;
         }
 
         // Dibujar parte inferior rombo:
-        for ($fila = $medio - 1 ; $fila >= 1; $fila--) {
+        for ($anchoFila = $medio - 1 ; $anchoFila >= 1; $anchoFila--) {
             for ($columna = 1; $columna <= $entero; $columna++) {
-                if ( ($columna > $medio - $fila) && ($columna < $medio + $fila ) ) {
+                if ( ($columna > $medio - $anchoFila) && ($columna < $medio + $anchoFila ) ) {
                     echo '*';
                 } else {
                     echo ' ';

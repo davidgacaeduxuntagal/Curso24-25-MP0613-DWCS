@@ -38,4 +38,3 @@ $M2 = [ [1, 4], [2, 5], [3, 6]];
 $r = productoMatricial($M1, $M2);
 
 var_dump($r);
-?>

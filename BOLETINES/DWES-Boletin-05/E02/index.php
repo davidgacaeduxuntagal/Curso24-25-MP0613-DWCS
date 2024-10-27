@@ -11,7 +11,13 @@ function imprimirMatriz(int $filas, int $columnas): array {
         $matriz = $_GET['matriz'];
         $activa = true;
     } else {
-        $matriz = array();
+        // Añadimos valores random por defecto para hacer más fácil depuración:
+        for($fila = 0; $fila < $filas; $fila++) {
+            for ($columna = 0; $columna < $columnas; $columna++) {
+                $matriz[$fila][$columna] = rand(0,100);
+            }
+        }
+        $activa = true;
     }
 
     // Añadir filas a la tabla 

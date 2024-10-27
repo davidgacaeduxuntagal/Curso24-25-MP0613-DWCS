@@ -65,6 +65,7 @@
     }
 
     // Obtenemos la siguiente transición consultando la tabla de transiciones
+    // "hack" para este problema en concreto : [0] en $estado[0] = siempre recibimos el evento Enviar (Reset tiene un enlace a empezar de nuevo)
     $listaTransiciones = $transiciones[$automata[$estado][0]];
 
     // Procesamos la transición:

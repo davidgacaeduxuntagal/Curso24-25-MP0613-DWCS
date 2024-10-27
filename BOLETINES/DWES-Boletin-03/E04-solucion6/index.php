@@ -48,7 +48,7 @@ MARCA;
     }
 ?>
         <button id="botonEnviar" type="submit">Enviar</button>      
-        <button id="botonReset">Reset</button> 
+        <button type="reset" ><a href="<?php echo $_SERVER['PHP_SELF'] ?>" style="text-decoration: none;">Borrar</a></button>
     </form>
 </body>
 </html>

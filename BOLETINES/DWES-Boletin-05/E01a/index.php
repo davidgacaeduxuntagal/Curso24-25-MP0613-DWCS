@@ -6,22 +6,27 @@
         $cifrado  = $mensaje;
         $posicion = 0; 
 
-        for($i = 0; $i < mb_strlen($mensaje); $i++ ) {            
-            $posicion = mb_strpos($cadenaReferencia, mb_substr($mensaje, $i, 1));   // buscamos la posición del carácter de codificación 
+        for($i = 0; $i < mb_strlen($mensaje); $i++ ) {    
+            // Los espacios los dejamos tal cual:
+            if ( mb_substr($mensaje, $i, 1) === " " ) {   
+                $cifrado = mb_substr($cifrado, 0, $i) .  " " .  mb_substr($cifrado, $i+1, strlen($cifrado));    
+            } else {     
+                $posicion = mb_strpos($cadenaReferencia, mb_substr($mensaje, $i, 1));   // buscamos la posición del carácter de codificación 
 
-            if ( $posicion === false ) {  // false = caracter no está en cadenaReferencia
-                return "Carácter en mensaje no soportado: '" . mb_substr($mensaje, $i, 1) . "' : PROCESO ABORTADO";
-            } else if ( mb_substr($codigo, $posicion, 1) === "-" ) {
-                ;
-            } else if ( mb_substr($codigo, $posicion, 1) === '.' ) {
-                // cadena antes del carácter a borrar =  mb_substr($cifrado, 0, $i)
-                // cadena después del carácter a borrar = mb_substr($cifrado, $i+1, strlen($cifrado))
-                // el caracter "^" queda "reservado" para indicar borrado posterior
-                $cifrado = mb_substr($cifrado, 0, $i) .  "^" . mb_substr($cifrado, $i+1, mb_strlen($cifrado));
-            } else {      
-                // ver comentarios encima...mismo razonamiento
-                $cifrado = mb_substr($cifrado, 0, $i) .  mb_substr($codigo, $posicion, 1) .  mb_substr($cifrado, $i+1, strlen($cifrado));
-            }
+                if ( $posicion === false ) {  // false = caracter no está en cadenaReferencia
+                    return "Carácter en mensaje no soportado: '" . mb_substr($mensaje, $i, 1) . "' : PROCESO ABORTADO";
+                } else if ( mb_substr($codigo, $posicion, 1) === "-" ) {
+                    ;
+                } else if ( mb_substr($codigo, $posicion, 1) === '.' ) {
+                    // cadena antes del carácter a borrar =  mb_substr($cifrado, 0, $i)
+                    // cadena después del carácter a borrar = mb_substr($cifrado, $i+1, strlen($cifrado))
+                    // el caracter "^" queda "reservado" para indicar borrado posterior
+                    $cifrado = mb_substr($cifrado, 0, $i) .  "^" . mb_substr($cifrado, $i+1, mb_strlen($cifrado));
+                } else {      
+                    // ver comentarios encima...mismo razonamiento
+                    $cifrado = mb_substr($cifrado, 0, $i) .  mb_substr($codigo, $posicion, 1) .  mb_substr($cifrado, $i+1, strlen($cifrado));    
+                }
+            }      
         }
 
         $cifrado = str_replace('^', '', $cifrado);  // Eliminamos los caracteres codificados con "."
@@ -37,7 +42,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DWES-PHP-B05-01</title>
+    <title>DWES-PHP-B05-01a</title>
     <style>
         .monoespacio { font-family: monospace; }
     </style>
@@ -93,14 +98,13 @@ MARCA;
  
    if ( !empty($_GET['mensaje']) && (mb_strlen($codigo) !== mb_strlen($cadenaReferencia)) )  {  
         echo <<<MARCA
-        <p style="color: red">La cadena código debe tener la misma longitud que la de Refer., por favor</p>
+        <p class="monoespacio" style="color: red">La cadena código debe tener la misma longitud que la de Refer., por favor</p>
 MARCA;
     } else {
-        echo "<p>El mensaje codificado es: " . codificarMensaje($mensaje, $codigo, $cadenaReferencia) . "</p>";
+        echo '<p class="monoespacio" style="color: blue">El mensaje codificado es: ' . codificarMensaje($mensaje, $codigo, $cadenaReferencia) . "</p>";
     }
 ?>
         <button id="botonEnviar" type="submit">Enviar</button>      
-        <button id="botonReset">Reset</button> 
-    </form>
+        <button type="reset" ><a href="<?php echo $_SERVER['PHP_SELF'] ?>" style="text-decoration: none;">Borrar</a></button>    </form>
 </body>
 </html>

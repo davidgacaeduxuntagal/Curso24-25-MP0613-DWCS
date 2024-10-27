@@ -22,7 +22,7 @@ function calcularFibonacciIterativa ($termino) {
  *  Recursiva
  *
 */
-function calcularFibonacciRecursiva ($termino) {
+function calcularFibonacciRecursiva ($termino): int {
     if ( $termino < 2 ) {
         return $termino;
     } else {
@@ -81,11 +81,12 @@ SEGUNDAVEZ;
     <h2>Soluciones:</h2>
      <pre><p>
 DATOSOK; 
+    echo "Iterativa: ";
     for ($i = 1; $i <= $termino; $i++) {
         echo calcularFibonacciIterativa ($i) . ( $i === $termino ? "" : ", ");
     }
-
-    echo "</p></pre><pre><p>";
+    echo "</p></pre>";
+    echo "<pre><p>Recursiva: ";
             for ($i = 1; $i <= $termino; $i++) {
                 echo calcularFibonacciRecursiva ($i) . ( $i === $termino ? "" : ", ");
             }

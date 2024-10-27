@@ -70,6 +70,9 @@ SEGUNDAVEZ;
    </div>   
 DATOSOK;         
     echo "<pre style='font-family: monospace'>";
+    $solucion = resolverEcuacionSegundoGrado($coeficienteA, $coeficienteB, $coeficienteC);
+    echo "(Solución ({$coeficienteA},{$coeficienteB},{$coeficienteC}): raíz 1 = {$solucion[0]}  ; raíz 2 = {$solucion[1]} <br>";    
+
     for ($i = 1; $i <= 10; $i++) {
         $coefA = (random_int(1,10) <= 5 ? -1: 1) * ( floor(random_int(1, 50) ));
         $coefB = (random_int(1,10) <= 5 ? -1: 1) * ( floor(random_int(1, 50) ));

@@ -20,6 +20,7 @@ foreach ($instrumentos as $instrumento) {
 
 echo "<br>" . "<br>";
 
+
 // Ejemplo de qué pasa con métodos que no pertenecen a la clase base
 // Si el código no es totalmente polimórfico, cada vez que
 // añadamos un nuevo instrumento a nuestra jerarquía de clases

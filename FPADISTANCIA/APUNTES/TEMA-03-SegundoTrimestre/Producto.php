@@ -25,6 +25,7 @@ class Producto extends Conexion {
 
     public function setPvp($pvp) {
         $this->pvp = $pvp;
+        
     }
 
     public function setFamilia($familia) {

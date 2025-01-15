@@ -1,0 +1,19 @@
+{
+    "name": "david/p08_04_04_05",
+    "type": "project",
+    "require": {
+        "google/apiclient": "^2.14",
+        "google/cloud-logging": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clases\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David García Cancio",
+            "email": "davidgaca@iesrodeira.gal"
+        }
+    ]
+}

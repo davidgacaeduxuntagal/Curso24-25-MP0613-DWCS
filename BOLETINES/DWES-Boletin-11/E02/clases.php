@@ -128,7 +128,7 @@ class NombreClaseBase {
 //   $ejemplo1 = "cadena"::class;   // obtener el nombre plenamente calificado de una clase; en TIEMPO DE COMPILACIÓN
 //   $ejemplo2 = funcion()::class;   // obtener el nombre plenamente calificado de una clase; función devuelve un string;
 //   $ejemplo3 = new Circulo();   
-//   $ejemplo4 = $ejemplo3::class;      // obtener el nombre plenamente calificado de una clase; función devuelve un string; en TIEMPO DE EJECUCIÓN
+//   $ejemplo4 = $ejemplo3::class;   // obtener el nombre plenamente calificado de una clase; función devuelve un string; en TIEMPO DE EJECUCIÓN
 //   $ejemplo4 = get_class($ejemplo3);  // es lo mismo
 //   $ejemplo5 = new $ejemplo1();
 

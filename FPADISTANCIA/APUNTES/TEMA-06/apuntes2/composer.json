@@ -1,0 +1,22 @@
+{
+    "name": "david/apuntes",
+    "type": "project",
+    "license": "GPL",
+    "config": {
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Clases\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David García Cancio",
+            "email": "davidgaca@iesrodeira.gal"
+        }
+    ],
+    "require": {
+        "wsdl2phpgenerator/wsdl2phpgenerator": "^3.4"
+    }
+}

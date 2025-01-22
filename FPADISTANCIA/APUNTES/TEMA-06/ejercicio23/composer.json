@@ -1,0 +1,23 @@
+{
+    "name": "david/ejercicio23",
+    "description": "Ejercico Unidad 6 apartado 23",
+    "type": "project",
+    "license": "gnu/gpl",
+    "config": {
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Clases\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "David",
+            "email": "davidgaca@iesrodeira.gal"
+        }
+    ],
+    "require": {
+        "wsdl2phpgenerator/wsdl2phpgenerator": "^3.4"
+    }
+}

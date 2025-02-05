@@ -1,0 +1,15 @@
+INSTRUCCIONES PARA AÑADIR SOPORTE YAML AL PHP DEL XAMPP
+
+1) Descargar .dll para Windows, para la versión de php que tengamos (php --version)
+   y meter en el directorio ext de php:
+
+https://pecl.php.net/package/yaml/2.2.2/windows
+
+Por ejemplo: 8.0 Thread Safe (TS) x64
+
+2) Modificar php.ini: en la sección de extensiones añadir la línea:
+extension=php_yaml
+
+
+3) Comprobar que ya está operativa:
+php -i | findstr /I "yaml"

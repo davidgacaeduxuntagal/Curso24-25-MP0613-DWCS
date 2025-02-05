@@ -1,0 +1,19 @@
+{
+    "name": "david/gptchat",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "David\\Gptchat\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David García Cancio",
+            "email": "davidgaca@iesrodeira.gal"
+        }
+    ],
+    "require": {
+        "jaxon-php/jaxon-core": "~4.0",
+        "jaxon-php/jaxon-js": "*"
+    }
+}

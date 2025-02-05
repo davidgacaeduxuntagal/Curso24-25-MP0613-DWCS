@@ -1,0 +1,10 @@
+{
+    "require": {
+        "jaxon-php/jaxon-core": "~4.0",
+        "jaxon-php/jaxon-js": "*",
+        "jaxon-php/jaxon-dialogs": "*",
+        "jaxon-php/jaxon-latte": "*",
+        "jaxon-php/jaxon-flot": "*",
+        "keradus/psr4autoloader": "*"
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "packages": [
+        {
+            "name": "yepsua/jquery4php",
+            "version": "v1.7.0",
+            "version_normalized": "1.7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oyepez003/jQuery4PHP.git",
+                "reference": "fedff0be025bc2dca738151df96c6d8057cceb70"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oyepez003/jQuery4PHP/zipball/fedff0be025bc2dca738151df96c6d8057cceb70",
+                "reference": "fedff0be025bc2dca738151df96c6d8057cceb70",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "time": "2015-03-17T20:34:39+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "YepSua/Labs/RIA/jQuery4PHP/jquery4php_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Omar Yepez",
+                    "email": "omar.yepez@yepsua.com"
+                }
+            ],
+            "description": "Makes easy writing javascript code (jQuery syntax) using PHP objects",
+            "homepage": "http://jquery4php.sourceforge.net/",
+            "keywords": [
+                "jQuery plugins",
+                "jQuery4PHP",
+                "jQueryUI",
+                "jquery",
+                "php"
+            ],
+            "install-path": "../yepsua/jquery4php"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

@@ -1,0 +1,15 @@
+imports:
+    - { resource: jaxon.yaml }
+
+services:
+    _defaults: { public: true }
+
+    jaxon.ajax.utils:
+        class: Jaxon\Symfony\Utils
+    Jaxon\Symfony\Jaxon:
+        arguments:
+            - '@kernel'
+            - '@logger'
+            - '@twig'
+            - '@=service(service("jaxon.ajax.utils").getSessionService())'
+            - '%jaxon%'

@@ -12,8 +12,11 @@
             "email": "davidgaca@iesrodeira.gal"
         }
     ],
-    "require": {
-        "jaxon-php/jaxon-core": "~4.0",
-        "jaxon-php/jaxon-js": "*"
-    }
+    "require-dev": {
+        "jaxon-php/jaxon-core": "dev-main",
+        "jaxon-php/jaxon-dialogs": "dev-main",
+        "jaxon-php/jaxon-flot": "dev-main",
+        "keradus/psr4autoloader": "dev-master"
+    },
+    "minimum-stability": "dev"
 }

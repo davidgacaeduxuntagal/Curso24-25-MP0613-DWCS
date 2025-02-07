@@ -2,7 +2,7 @@
 
 function menu_subdir()
 {
-    return '/dwes_tema_07_blanco/jaxon/jaxon-examples/web';
+    return '../web';
 }
 
 function menu_entries()

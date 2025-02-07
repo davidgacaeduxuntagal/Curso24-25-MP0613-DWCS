@@ -44,7 +44,7 @@
                             </div>
                             <input type="password" class="form-control" placeholder="Repita la contraseña" id='pass2' name='pass2' required>
                         </div>
-                        <span id='errPass' for='pass2' 
+                        <span id='errPass' for='pass2'
                             class='<?php echo (!isset($_POST['enviar']) || validarPasswords($_POST['pass1'], $_POST['pass2'])) ? "d-none" : "input-group form-group text-danger" ?>'>
                             Deben tener más de 5 caracteres o ser iguales.
                         </span>

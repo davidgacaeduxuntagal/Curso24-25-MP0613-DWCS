@@ -3,10 +3,10 @@ require (__DIR__ . '/../vendor/autoload.php');
 
 use Jaxon\Jaxon;
 use Jaxon\Response\Response;
+use function Jaxon\jaxon;
 
 // Obtener el estado de todo
 $jaxon = jaxon();
-echo 'core.version=' . $jaxon->getOption('core.version') . PHP_EOL;
 echo 'core.version=' . $jaxon->getOption('core.version') . PHP_EOL;
 echo 'core.language=' . $jaxon->getOption('core.language') . PHP_EOL;
 echo 'core.encoding=' . $jaxon->getOption('core.encoding') . PHP_EOL;

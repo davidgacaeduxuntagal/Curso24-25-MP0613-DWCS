@@ -1,1 +1,15 @@
 https://github.com/jaxon-php/jaxon-examples
+
+AVISO:
+Si composer update pide un access token de GitHub, entonces tienes que:
+
+1) Ir a tu cuenta de GitHub (con la que estás trabajando) y solictar un access token
+  Mira en los mensajes de Composer para ver el enlace en el que hacer clic:
+  
+  "When working with _public_ GitHub repositories only, head here to retrieve a token:
+   https://github.com/settings/tokens/new?scopes=&description=Composer+on+TU MAQUINA+FECHA-HORA
+   This token will have read-only permission for public information only."
+
+2) Ejecuta el comando siguiente para añadir tu token a la cache de tokens:
+
+     composer config -g github-oauth.github.com <tu token> 

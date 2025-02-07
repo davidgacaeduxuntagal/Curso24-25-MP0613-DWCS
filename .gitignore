@@ -472,3 +472,7 @@ composer.lock
 *.css.map
 *.sass.map
 *.scss.map
+
+
+### 20250207V 
+auth.json

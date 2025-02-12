@@ -1,4 +1,0 @@
-Las carpetas siguientes están pensadas para poner directamente en htdocs del Xampp y evitarte problemas de URL:
-  - las que terminan en _blanco: están creadas con todos listo (como la otra), faltando solo ejecutar "composer update"
-dwes_tema_07
-dwes_tema_07_blanco

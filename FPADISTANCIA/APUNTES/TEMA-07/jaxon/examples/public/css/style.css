@@ -1,0 +1,28 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+.buttons {
+  margin-top: 7px;
+  margin-bottom: 20px;
+}
+
+.nav-examples {
+  margin-bottom: 15px;
+}
+
+.nav-examples .badge {
+  font-size: .9em;
+  font-weight: 400;
+  margin: 5px 5px;
+}
+
+.code {
+  overflow: auto;
+  max-height: 550px;
+}

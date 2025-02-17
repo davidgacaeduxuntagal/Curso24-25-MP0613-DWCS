@@ -1,0 +1,21 @@
+app:
+  classes:                         ['HelloWorld']
+  dialogs:
+    default:
+      modal:                       bootbox
+      alert:                       noty
+      confirm:                     noty
+
+lib:
+  core:
+    debug:
+      on:                          false
+    prefix:
+      class:                       "Jaxon"
+    request:
+      uri:                         "ajax.php"
+      csrf_meta:                   "csrf-token"
+
+  js:
+    lib:
+      uri:                         "/js"

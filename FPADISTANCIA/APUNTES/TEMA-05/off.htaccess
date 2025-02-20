@@ -1,0 +1,17 @@
+# recuerda crear el archivo proyecto.pass (.htpasswd)  con el comando (por ejemplo): htpasswd -c proyecto.pass gestor
+
+AuthName "Contenido restringido"
+AuthType Basic
+# para autenticación por digest hace falta activar en Xampp->httpd.conf->LoadModule auth_digest_module modules/mod_auth_digest.so
+# AuthType Digest
+# AuthDigestAlgorithm MD5
+# AuthDigestDomain "Contenido restringido"
+# AuthUserFile "D:\midirectorio\XX-AUTENTICACION\proyecto-dgst.pass"
+# AuthDigestNonceLifetime 5
+
+
+AuthUserFile "D:\midirectorio\XX-AUTENTICACION\proyecto.pass"
+# AuthUserFile /home/persona/midirectorio/XX-AUTENTICACION/proyecto.linux.pass
+
+
+Require valid-user 

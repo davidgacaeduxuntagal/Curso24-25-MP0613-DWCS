@@ -1,12 +1,72 @@
 <?php
+ini_set('display_errors', 0);
+
 session_start();
 require '../vendor/autoload.php';
 
-use Clases\ExchangeRates;
-use Clases\getExchangeRatesByDate;
-use Clases\getExchangeRatesByDateResponse;
-use Clases\getCurrentExchangeRate;
 
+use Clases\Gate;
+use Clases\ISOCodes;
+use Clases\ExchangeRatesByDateByISO;
+
+// Para entender lo siguiente, hay que estudiar las clases en src que 
+//  genera wsdl2phpgenerator  a partir del WSDL de la API
+// Hay que ver qué métodos hay que tipos van devolviendo
+
+// Obtenemos la lista de divisas soportadas 
+// TODO: obtener nombre completo de la divisa a partir de código ISO
+$servicio   = new Gate();
+$solicitud  = new ISOCodes();
+$divisas    = $servicio->ISOCodes($solicitud)
+                       ->getISOCodesResult()
+                       ->getString();
+
+// $divisas = [
+//     'USD' => 'Dolar USA',
+//     'GBP' => 'Libra Esterlina',
+//     'JPY' => 'Yen Japones',
+//     'EUR' => 'Euro',
+//     'CAD' => 'Dolar Canadiense',
+// ];
+$bancos = [
+    "DCA" => 'Banco de Armenia',          // https://www.cba.am/EN/SitePages/newsdetails.aspx?NewsID=14
+    // "LB" => 'Banco de Lituania',          // https://www.lb.lt/
+];
+
+$erroresConsulta = [
+    '-1' => 'Cambio no encontrado.',
+    '-2' => 'Error interno. Causa desconocida.',
+    '-3' => 'Se especifica un valor incorrecto.',
+    '-4' => 'Error interno. Número incorrecto de unidades.',
+    '-5' => 'El cambio no existe para esos datos'
+];
+
+function calcularCambio($fecha, $dcmEur, $strCurrency)
+{
+    // Para entender lo siguiente, hay que estudiar las clases en src que 
+    //  genera wsdl2phpgenerator  a partir del WSDL de la API
+    // Hay que ver qué métodos hay que tipos van devolviendo
+    $servicio                   = new Gate();
+
+    // Obtener tasa de cambio de € a Dragma Armenio    
+    $temp1                      = new ExchangeRatesByDateByISO(new DateTime($fecha), "EUR"); 
+    $tasaDragmasArmeniosXEuro   = $servicio->ExchangeRatesByDateByISO($temp1)
+                                           ->getExchangeRatesByDateByISOResult()
+                                           ->getRates()
+                                           ->getExchangeRate()[0]
+                                           ->getRate();
+
+    // Obtener tasa de cambio a Dragma Armenio                                           
+    $temp2                      = new ExchangeRatesByDateByISO(new DateTime($fecha), $strCurrency);    
+    $tasaDragmasArmeniosXDivisa = $servicio->ExchangeRatesByDateByISO($temp2)
+                                           ->getExchangeRatesByDateByISOResult()
+                                           ->getRates()
+                                           ->getExchangeRate()[0]
+                                           ->getRate();
+
+    // Convertimos de Euro a Divisa elegida usando como intermediario el Dragma Armenio
+    return ($dcmEur * $tasaDragmasArmeniosXEuro) * (1.0 / $tasaDragmasArmeniosXDivisa);
+}
 
 ?>
 
@@ -26,17 +86,17 @@ use Clases\getCurrentExchangeRate;
     <div class="container mt-3">
         <?php
         if (isset($_POST['enviar'])) {
-            $fecha = $_POST['strDate'];
-            $dcmEur = $_POST['dcmEUR'];
+            $fecha       = $_POST['strDate'];
+            $dcmEur      = $_POST['dcmEUR'];
             $strCurrency = $_POST['strCurrency'];
-            $intRank = $_POST['intRank'];
-            $strBank = $_POST['strBank'];
-            $cambio = calcularCambio($dcmEur, $strBank, $strCurrency, $fecha, $intRank);
+            $cambio      = calcularCambio($fecha, $dcmEur, $strCurrency);
+
             if ($cambio <= -1 && $cambio >= -5) {
                 $_SESSION['error'] = $erroresConsulta[(int) ($cambio)];
                 header("Location:{$_SERVER['PHP_SELF']}");
                 die();
             }
+
             $_SESSION['res'] = $cambio;
         }
         ?>
@@ -55,31 +115,9 @@ use Clases\getCurrentExchangeRate;
                         }
                         ?>
                     </select>
-
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="div">Operacion</label>
-                    <select class="form-control" id="op" name='intRank'>
-                        <option value=1>Compra</option>
-                        <option value=2>Intermedio</option>
-                        <option value=3>Venta</option>
-
-
-                    </select>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="ban">Banco</label>
-                    <select class="form-control" id="ban" name='strBank'>
-                        <?php
-                        foreach ($bancos as $k => $v) {
-                            echo "<option value='$k'>$v</option>";
-                        }
-                        ?>
-                    </select>
-
-                </div>
                 <div class="form-group col-md-4">
                     <label for="ban">Fecha</label>
                     <input type='date' name='strDate' require class='form-control'>
@@ -106,10 +144,8 @@ use Clases\getCurrentExchangeRate;
                     <input type='reset' value='Limpiar' class='btn btn-warning mr-3'>
 
                 </div>
-
             </div>
         </form>
-
     </div>
 </body>
 

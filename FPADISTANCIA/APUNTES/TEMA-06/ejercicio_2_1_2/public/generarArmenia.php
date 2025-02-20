@@ -13,15 +13,16 @@ $context = stream_context_create([
         // 'verify_peer' => false,
         //'verify_peer_name' => false,
         //'allow_self_signed' => true,
-        'cafile' => 'cacert-2023-01-10.pem'
+        'cafile' => 'cacert-2024-12-31.pem'  // descargado de: https://curl.se/docs/caextract.html
     ]
 ]);
 
 // Generar
 $generator = new Generator();
+// Este proveedor no funciona bien por https
 $generator->generate(
     new Config([
-        'inputFile' => 'https://www.lb.lt/webservices/ExchangeRates/ExchangeRates.asmx?WSDL', //wsdl
+        'inputFile' => 'http://api.cba.am/exchangerates.asmx?WSDL', //wsdl
         'outputDir' => '../src',  //directorio donde vamos a generar las clases
         'namespaceName' => 'Clases', //namespace que vamos a usar con ellas (indicar en composer)
         'soapClientOptions' => array(

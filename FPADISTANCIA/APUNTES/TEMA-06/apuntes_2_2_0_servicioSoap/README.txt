@@ -10,3 +10,18 @@ Al programar un servicio web, es importante cambiar en el fichero
  En caso contrario, con su valor por defecto ("1") 
  los cambios que realices en los ficheros WSDL no tendrán 
  efecto de forma inmediata.
+
+ PATHES A APLICAR:
+ En src: 
+  Gate.php línea 77
+  De: 
+      public function ISOCodes(ISOCodes $parameters)
+    {
+      return $this->__soapCall('ISOCodes', array($parameters));
+    }
+
+ A: 
+     public function ISOCodes(ISOCodes $parameters)
+    {
+      return $this->__soapCall('ISOCodes', []);
+    }

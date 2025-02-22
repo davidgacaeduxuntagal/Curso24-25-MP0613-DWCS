@@ -3,3 +3,13 @@ Hay un bug en wsdl2phpgenerator:
 comenta las líneas 156-158 del fichero
 vendor\wsdl2phpgenerator\lib\PhpClass.php
 
+o mejor todavía, cambiar por:
+        if (count($this->implements != null ? $this->implements : []) > 0) {
+            $ret .= ' implements ' . implode(', ', $this->implements);
+        }
+
+ANTES:
+
+        if (count($this->implements) > 0) {
+            $ret .= ' implements ' . implode(', ', $this->implements);
+        }

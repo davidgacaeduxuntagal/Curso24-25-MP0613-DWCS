@@ -1,9 +1,15 @@
 <?php
+ini_set('soap.wsdl_cache_enabled',0);
+ini_set('soap.wsdl_cache_ttl',0);
+
   require '../vendor/autoload.php';
 
   
-   // $uri='http://localhost/unidad6/servidorSoap';
-   $uri='http://127.0.0.1/dwes_tema_06/servicioweb/servidorSoap';
+   $host = "dwcs.localhost";
+   $urlrelativo = "/FPADISTANCIA/APUNTES/TEMA-06/apuntes_2_2_2_servicioWeb/servidorSoap";
+   $uri = "http://" . $host . $urlrelativo;
+  
+
    $parametros=['uri'=>$uri];
    
    try {

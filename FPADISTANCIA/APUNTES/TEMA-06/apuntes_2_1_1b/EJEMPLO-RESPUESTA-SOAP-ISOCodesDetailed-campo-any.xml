@@ -1,0 +1,347 @@
+<xs:schema xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="NewDataSet">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ISOCodes"
+        msdata:UseCurrentLocale="true">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="ISOCodes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ISO">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="3" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="DescriptionAM" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="DescriptionEN" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Amount" type="xs:int" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+            <xs:selector xpath=".//ISOCodes" />
+            <xs:field xpath="ISO" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>
+<diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+    xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+    <DocumentElement xmlns="">
+        <ISOCodes diffgr:id="ISOCodes1" msdata:rowOrder="0">
+            <ISO>AED</ISO>
+            <DescriptionAM>ՄԱԷ դիրհամ</DescriptionAM>
+            <DescriptionEN>UAE dirham</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes2" msdata:rowOrder="1">
+            <ISO>ARS</ISO>
+            <DescriptionAM>Արգենտինական պեսո</DescriptionAM>
+            <DescriptionEN>Argentine peso</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes3" msdata:rowOrder="2">
+            <ISO>AUD</ISO>
+            <DescriptionAM>Ավստրալիական դոլար</DescriptionAM>
+            <DescriptionEN>Australian dollar</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes4" msdata:rowOrder="3">
+            <ISO>BGN</ISO>
+            <DescriptionAM>Բուլղարական լեվ</DescriptionAM>
+            <DescriptionEN>Bulgarian lev</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes5" msdata:rowOrder="4">
+            <ISO>BRL</ISO>
+            <DescriptionAM>Բրազիլական ռեալ</DescriptionAM>
+            <DescriptionEN>Brazilian real</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes6" msdata:rowOrder="5">
+            <ISO>BYN</ISO>
+            <DescriptionAM>Բելոռուսական ռուբլի</DescriptionAM>
+            <DescriptionEN>Belarussian ruble</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes7" msdata:rowOrder="6">
+            <ISO>CAD</ISO>
+            <DescriptionAM>Կանադական դոլար</DescriptionAM>
+            <DescriptionEN>Canadian dollar</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes8" msdata:rowOrder="7">
+            <ISO>CHF</ISO>
+            <DescriptionAM>Շվեյցարակ ֆրանկ</DescriptionAM>
+            <DescriptionEN>Swiss franc</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes9" msdata:rowOrder="8">
+            <ISO>CNY</ISO>
+            <DescriptionAM>Չինական յուան</DescriptionAM>
+            <DescriptionEN>Chinese yuan</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes10" msdata:rowOrder="9">
+            <ISO>CZK</ISO>
+            <DescriptionAM>Չեխական կրոնա</DescriptionAM>
+            <DescriptionEN>Czech koruna</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes11" msdata:rowOrder="10">
+            <ISO>DKK</ISO>
+            <DescriptionAM>Դանիական կրոն</DescriptionAM>
+            <DescriptionEN>Danish krone</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes12" msdata:rowOrder="11">
+            <ISO>EGP</ISO>
+            <DescriptionAM>Եգիպտական ֆունտ</DescriptionAM>
+            <DescriptionEN>Egyptian pound</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes13" msdata:rowOrder="12">
+            <ISO>EUR</ISO>
+            <DescriptionAM>ԵՎՐՈ</DescriptionAM>
+            <DescriptionEN>Euro</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes14" msdata:rowOrder="13">
+            <ISO>GBP</ISO>
+            <DescriptionAM>Մեծ Բրիտանիայի ֆունտ ստերլինգ</DescriptionAM>
+            <DescriptionEN>Great Britain Pound sterling</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes15" msdata:rowOrder="14">
+            <ISO>GEL</ISO>
+            <DescriptionAM>Վրացական լարի</DescriptionAM>
+            <DescriptionEN>Georgian lari</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes16" msdata:rowOrder="15">
+            <ISO>HKD</ISO>
+            <DescriptionAM>Հոնգ Կոնգի դոլար</DescriptionAM>
+            <DescriptionEN>Hong Kong dollar</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes17" msdata:rowOrder="16">
+            <ISO>HUF</ISO>
+            <DescriptionAM>Հունգարական ֆորինտ</DescriptionAM>
+            <DescriptionEN>Hungarian forint</DescriptionEN>
+            <Amount>10</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes18" msdata:rowOrder="17">
+            <ISO>ILS</ISO>
+            <DescriptionAM>Իսրայելական շեքել</DescriptionAM>
+            <DescriptionEN>Israeli shekel</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes19" msdata:rowOrder="18">
+            <ISO>INR</ISO>
+            <DescriptionAM>Հնդկական ռուփի</DescriptionAM>
+            <DescriptionEN>Indian rupee</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes20" msdata:rowOrder="19">
+            <ISO>IRR</ISO>
+            <DescriptionAM>Իրանական ռիալ</DescriptionAM>
+            <DescriptionEN>Iranian rial</DescriptionEN>
+            <Amount>100</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes21" msdata:rowOrder="20">
+            <ISO>ISK</ISO>
+            <DescriptionAM>Իսլանդական կրոն</DescriptionAM>
+            <DescriptionEN>Icelandic krona</DescriptionEN>
+            <Amount>10</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes22" msdata:rowOrder="21">
+            <ISO>JPY</ISO>
+            <DescriptionAM>Ճապոնական իեն</DescriptionAM>
+            <DescriptionEN>Japanese yen</DescriptionEN>
+            <Amount>10</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes23" msdata:rowOrder="22">
+            <ISO>KGS</ISO>
+            <DescriptionAM>Ղրղզական սոմ</DescriptionAM>
+            <DescriptionEN>Kyrgyzstani som</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes24" msdata:rowOrder="23">
+            <ISO>KRW</ISO>
+            <DescriptionAM>Հարավկորեական վոն</DescriptionAM>
+            <DescriptionEN>South Korean won</DescriptionEN>
+            <Amount>100</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes25" msdata:rowOrder="24">
+            <ISO>KWD</ISO>
+            <DescriptionAM>Քուվեյթյան դինար</DescriptionAM>
+            <DescriptionEN>Kuwaiti dinar</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes26" msdata:rowOrder="25">
+            <ISO>KZT</ISO>
+            <DescriptionAM>Ղազախական տենգե</DescriptionAM>
+            <DescriptionEN>Kazakhstani tenge</DescriptionEN>
+            <Amount>10</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes27" msdata:rowOrder="26">
+            <ISO>LBP</ISO>
+            <DescriptionAM>Լիբանանյան ֆունտ</DescriptionAM>
+            <DescriptionEN>Lebanese pound</DescriptionEN>
+            <Amount>100</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes28" msdata:rowOrder="27">
+            <ISO>LTL</ISO>
+            <DescriptionAM>Լիտվական լիտ</DescriptionAM>
+            <DescriptionEN>Lithuanian litas</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes29" msdata:rowOrder="28">
+            <ISO>LVL</ISO>
+            <DescriptionAM>Լատվիական լատ</DescriptionAM>
+            <DescriptionEN>Latvian lats</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes30" msdata:rowOrder="29">
+            <ISO>MDL</ISO>
+            <DescriptionAM>Մոլդովական լեյ</DescriptionAM>
+            <DescriptionEN>Moldovan leu</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes31" msdata:rowOrder="30">
+            <ISO>MXN</ISO>
+            <DescriptionAM>Մեքսիկական պեսո</DescriptionAM>
+            <DescriptionEN>Mexican peso</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes32" msdata:rowOrder="31">
+            <ISO>NOK</ISO>
+            <DescriptionAM>Նորվեգական կրոն</DescriptionAM>
+            <DescriptionEN>Norwegian krone</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes33" msdata:rowOrder="32">
+            <ISO>NZD</ISO>
+            <DescriptionAM>Նորզելանդական դոլար</DescriptionAM>
+            <DescriptionEN>New Zealand dollar</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes34" msdata:rowOrder="33">
+            <ISO>PLN</ISO>
+            <DescriptionAM>Լեհակահ զլոտի</DescriptionAM>
+            <DescriptionEN>Polish zloty</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes35" msdata:rowOrder="34">
+            <ISO>RON</ISO>
+            <DescriptionAM>Ռումինական լեյ</DescriptionAM>
+            <DescriptionEN>Romanian leu</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes36" msdata:rowOrder="35">
+            <ISO>RUB</ISO>
+            <DescriptionAM>Ռուսաստանյան ռուբլի</DescriptionAM>
+            <DescriptionEN>Russian rouble</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes37" msdata:rowOrder="36">
+            <ISO>SAR</ISO>
+            <DescriptionAM>Սաուդ. Արաբական ռիալ</DescriptionAM>
+            <DescriptionEN>Saudi riyal</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes38" msdata:rowOrder="37">
+            <ISO>SEK</ISO>
+            <DescriptionAM>Շվեդական կրոն</DescriptionAM>
+            <DescriptionEN>Swedish krona</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes39" msdata:rowOrder="38">
+            <ISO>SGD</ISO>
+            <DescriptionAM>Սինգապուրյան դոլար</DescriptionAM>
+            <DescriptionEN>Singapore dollar</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes40" msdata:rowOrder="39">
+            <ISO>SKK</ISO>
+            <DescriptionAM>Սլովակյան կրոնա</DescriptionAM>
+            <DescriptionEN>Slovak Koruna</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes41" msdata:rowOrder="40">
+            <ISO>SYP</ISO>
+            <DescriptionAM>Սիրիական ֆունտ</DescriptionAM>
+            <DescriptionEN>Syrian pound</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes42" msdata:rowOrder="41">
+            <ISO>TJS</ISO>
+            <DescriptionAM>Տաջիկական սոմոնի</DescriptionAM>
+            <DescriptionEN>Tajikistani somoni</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes43" msdata:rowOrder="42">
+            <ISO>TMT</ISO>
+            <DescriptionAM>Թուրքմենական մանաթ</DescriptionAM>
+            <DescriptionEN>TurkmenistanI manat</DescriptionEN>
+            <Amount>100</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes44" msdata:rowOrder="43">
+            <ISO>TRY</ISO>
+            <DescriptionAM>Թուրքական լիրա</DescriptionAM>
+            <DescriptionEN>Turkish lira</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes45" msdata:rowOrder="44">
+            <ISO>UAH</ISO>
+            <DescriptionAM>ՈՒկրաինական գրիվնյա</DescriptionAM>
+            <DescriptionEN>Ukrainian hryvnia</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes46" msdata:rowOrder="45">
+            <ISO>USD</ISO>
+            <DescriptionAM>ԱՄՆ դոլար</DescriptionAM>
+            <DescriptionEN>United States dollar</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes47" msdata:rowOrder="46">
+            <ISO>UZS</ISO>
+            <DescriptionAM>ՈՒզբեկական սում</DescriptionAM>
+            <DescriptionEN>Uzbekistan som</DescriptionEN>
+            <Amount>10</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes48" msdata:rowOrder="47">
+            <ISO>XAG</ISO>
+            <DescriptionAM>Արծաթ</DescriptionAM>
+            <DescriptionEN>Silver</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes49" msdata:rowOrder="48">
+            <ISO>XAU</ISO>
+            <DescriptionAM>Ոսկի</DescriptionAM>
+            <DescriptionEN>Gold</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+        <ISOCodes diffgr:id="ISOCodes50" msdata:rowOrder="49">
+            <ISO>XDR</ISO>
+            <DescriptionAM>Հատուկ փոխառության իրավունք</DescriptionAM>
+            <DescriptionEN>Special Drawing Rights</DescriptionEN>
+            <Amount>1</Amount>
+        </ISOCodes>
+    </DocumentElement>
+</diffgr:diffgram>

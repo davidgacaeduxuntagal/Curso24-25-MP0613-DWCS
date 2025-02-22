@@ -3,8 +3,13 @@ require '../vendor/autoload.php';
 
 use PHP2WSDL\PHPClass2WSDL;
 
+$host = "dwcs.localhost";
+$urlrelativo = "/FPADISTANCIA/APUNTES/TEMA-06/TAREA-06/servidorSoap";
+$uri = "http://" . $host . $urlrelativo;
+$url = $uri . "/servicio.php";
+
+
 $class = "Clases\\Operaciones";
-$uri = 'http://127.0.0.1/dwes_tema_06/TAREA-06/servidorSoap/servicioW.php';
-$wsdlGenerator = new PHPClass2WSDL($class, $uri);
+$wsdlGenerator = new PHPClass2WSDL($class, $url);
 $wsdlGenerator->generateWSDL(true);
 $fichero = $wsdlGenerator->save('../servidorSoap/servicio.wsdl');

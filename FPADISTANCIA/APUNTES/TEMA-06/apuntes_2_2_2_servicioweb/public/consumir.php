@@ -1,5 +1,12 @@
 <?php
-   $url = "http://127.0.0.1/dwes_tema_06/servicioweb/servidorSoap/servicio.wsdl";
+ini_set('soap.wsdl_cache_enabled',0);
+ini_set('soap.wsdl_cache_ttl',0);
+
+   $host = "dwcs.localhost";
+   $urlrelativo = "/FPADISTANCIA/APUNTES/TEMA-06/apuntes_2_2_2_servicioWeb/servidorSoap";
+   $uri = "http://" . $host . $urlrelativo;
+   $url = $uri . "/servicio.wsdl";
+
 
    try {
      $cliente = new SoapClient($url);

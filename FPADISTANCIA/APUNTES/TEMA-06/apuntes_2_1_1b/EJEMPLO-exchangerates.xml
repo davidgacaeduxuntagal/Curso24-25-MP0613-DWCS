@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.cba.am/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.cba.am/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.cba.am/">
+      <s:import namespace="http://tempuri.org/ExchangeRatesDS.xsd" />
+      <s:import schemaLocation="http://api.cba.am/exchangerates.asmx?schema=ExchangeRatesDS" namespace="http://tempuri.org/ExchangeRatesDS.xsd" />
+      <s:element name="ISOCodesDetailed">
+        <s:complexType />
+      </s:element>
+      <s:element name="ISOCodesDetailedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ISOCodesDetailedResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/ExchangeRatesDS.xsd" name="namespace" />
+                <s:attribute fixed="ISOCodesDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ISOCodes">
+        <s:complexType />
+      </s:element>
+      <s:element name="ISOCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ISOCodesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExchangeRatesLatestByISO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ISO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchangeRatesLatestByISOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRatesLatestByISOResult" type="tns:ExchangeRates" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExchangeRates">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NextAvailableDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreviousAvailableDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rates" type="tns:ArrayOfExchangeRate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfExchangeRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExchangeRate" nillable="true" type="tns:ExchangeRate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExchangeRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ISO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Difference" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExchangeRatesByDateByISO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ISO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchangeRatesByDateByISOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRatesByDateByISOResult" type="tns:ExchangeRates" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchangeRatesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchangeRatesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRatesByDateResult" type="tns:ExchangeRates" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchangeRatesLatest">
+        <s:complexType />
+      </s:element>
+      <s:element name="ExchangeRatesLatestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRatesLatestResult" type="tns:ExchangeRates" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchangeRatesByDateRangeByISO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ISOCodes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchangeRatesByDateRangeByISOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExchangeRatesByDateRangeByISOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/ExchangeRatesDS.xsd" name="namespace" />
+                <s:attribute fixed="ExchangeRatesByRangeDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ISOCodesDetailedSoapIn">
+    <wsdl:part name="parameters" element="tns:ISOCodesDetailed" />
+  </wsdl:message>
+  <wsdl:message name="ISOCodesDetailedSoapOut">
+    <wsdl:part name="parameters" element="tns:ISOCodesDetailedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISOCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:ISOCodes" />
+  </wsdl:message>
+  <wsdl:message name="ISOCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:ISOCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesLatestByISOSoapIn">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesLatestByISO" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesLatestByISOSoapOut">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesLatestByISOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesByDateByISOSoapIn">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesByDateByISO" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesByDateByISOSoapOut">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesByDateByISOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesByDate" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesLatestSoapIn">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesLatest" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesLatestSoapOut">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesLatestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesByDateRangeByISOSoapIn">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesByDateRangeByISO" />
+  </wsdl:message>
+  <wsdl:message name="ExchangeRatesByDateRangeByISOSoapOut">
+    <wsdl:part name="parameters" element="tns:ExchangeRatesByDateRangeByISOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GateSoap">
+    <wsdl:operation name="ISOCodesDetailed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Detailed list of codes.</wsdl:documentation>
+      <wsdl:input message="tns:ISOCodesDetailedSoapIn" />
+      <wsdl:output message="tns:ISOCodesDetailedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ISOCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List of the latest available ISO codes. Based on latest published rates.</wsdl:documentation>
+      <wsdl:input message="tns:ISOCodesSoapIn" />
+      <wsdl:output message="tns:ISOCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesLatestByISO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves latest rates of the specified ISO, will return single line. Includes trend. Check ISO Codes method for all available codes.</wsdl:documentation>
+      <wsdl:input message="tns:ExchangeRatesLatestByISOSoapIn" />
+      <wsdl:output message="tns:ExchangeRatesLatestByISOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDateByISO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves latest rates of the specified date and ISO, will return single line. Includes trend. Check ISO Codes method for all available codes.</wsdl:documentation>
+      <wsdl:input message="tns:ExchangeRatesByDateByISOSoapIn" />
+      <wsdl:output message="tns:ExchangeRatesByDateByISOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves all available rates of the specified date. Includes trend.</wsdl:documentation>
+      <wsdl:input message="tns:ExchangeRatesByDateSoapIn" />
+      <wsdl:output message="tns:ExchangeRatesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesLatest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the lastest published rates. Includes trend. Recommended for Web sites integration.</wsdl:documentation>
+      <wsdl:input message="tns:ExchangeRatesLatestSoapIn" />
+      <wsdl:output message="tns:ExchangeRatesLatestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDateRangeByISO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves rates for the specified period for comma separated ISO codes list.</wsdl:documentation>
+      <wsdl:input message="tns:ExchangeRatesByDateRangeByISOSoapIn" />
+      <wsdl:output message="tns:ExchangeRatesByDateRangeByISOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GateSoap" type="tns:GateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ISOCodesDetailed">
+      <soap:operation soapAction="http://www.cba.am/ISOCodesDetailed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ISOCodes">
+      <soap:operation soapAction="http://www.cba.am/ISOCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesLatestByISO">
+      <soap:operation soapAction="http://www.cba.am/ExchangeRatesLatestByISO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDateByISO">
+      <soap:operation soapAction="http://www.cba.am/ExchangeRatesByDateByISO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDate">
+      <soap:operation soapAction="http://www.cba.am/ExchangeRatesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesLatest">
+      <soap:operation soapAction="http://www.cba.am/ExchangeRatesLatest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDateRangeByISO">
+      <soap:operation soapAction="http://www.cba.am/ExchangeRatesByDateRangeByISO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GateSoap12" type="tns:GateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ISOCodesDetailed">
+      <soap12:operation soapAction="http://www.cba.am/ISOCodesDetailed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ISOCodes">
+      <soap12:operation soapAction="http://www.cba.am/ISOCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesLatestByISO">
+      <soap12:operation soapAction="http://www.cba.am/ExchangeRatesLatestByISO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDateByISO">
+      <soap12:operation soapAction="http://www.cba.am/ExchangeRatesByDateByISO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDate">
+      <soap12:operation soapAction="http://www.cba.am/ExchangeRatesByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesLatest">
+      <soap12:operation soapAction="http://www.cba.am/ExchangeRatesLatest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeRatesByDateRangeByISO">
+      <soap12:operation soapAction="http://www.cba.am/ExchangeRatesByDateRangeByISO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Gate">
+    <wsdl:port name="GateSoap" binding="tns:GateSoap">
+      <soap:address location="http://api.cba.am/exchangerates.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GateSoap12" binding="tns:GateSoap12">
+      <soap12:address location="http://api.cba.am/exchangerates.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

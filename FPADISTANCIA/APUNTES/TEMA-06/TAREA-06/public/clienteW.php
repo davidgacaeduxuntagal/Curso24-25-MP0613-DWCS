@@ -1,5 +1,8 @@
 <?php
-$url = 'http://127.0.0.1/dwes_tema_06/TAREA-06/servidorSoap/servicio.wsdl';
+$host        = "dwcs.localhost";
+$urlrelativo = "/FPADISTANCIA/APUNTES/TEMA-06/TAREA-06/servidorSoap";
+$uri         = "http://" . $host . $urlrelativo;
+$url         = $uri . "/servicio.wsdl";
 
 try {
     $cliente = new SoapClient($url);
@@ -7,7 +10,7 @@ try {
     die("Error en cliente SOAP:" . $f->getMessage());
 }
 
-$codP = 2;
+$codP = 13;
 $codT = 14;
 $codF = 'CONSOL';
 

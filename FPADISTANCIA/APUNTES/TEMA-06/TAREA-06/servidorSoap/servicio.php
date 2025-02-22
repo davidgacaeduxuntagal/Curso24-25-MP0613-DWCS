@@ -1,9 +1,12 @@
 <?php
 require '../vendor/autoload.php';
 
-//$uri=$_SERVER['PHP_SELF'];
-$uri = "http://127.0.0.1/dwes_tema_06/TAREA-06/servidorSoap/servicio.wsdl";
-$parametros = ['uri' => $uri];
+$host        = "dwcs.localhost";
+$urlrelativo = "/FPADISTANCIA/APUNTES/TEMA-06/TAREA-06/servidorSoap";
+$uri         = "http://" . $host . $urlrelativo;
+$url         = $uri . "/servicio.wsdl";
+
+$parametros = ['uri' => $url];
 
 try {
     $server = new SoapServer(NULL, $parametros);

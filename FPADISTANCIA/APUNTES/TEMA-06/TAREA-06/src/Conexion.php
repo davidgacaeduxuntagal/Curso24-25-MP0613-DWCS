@@ -21,8 +21,8 @@ class Conexion
     {
         $user = "gestor";
         $pass = "secreto";
-        $base='tarea6';
-        $dsn = "mysql:host=localhost:3306;dbname=$base;charset=utf8mb4";
+        $base='proyecto';
+        $dsn = "mysql:host=localhost:3307;dbname=$base;charset=utf8mb4";
         
         try {
             self::$conexion = new PDO($dsn, $user, $pass);

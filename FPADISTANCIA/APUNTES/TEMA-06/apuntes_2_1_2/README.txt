@@ -12,3 +12,6 @@ Al programar un servicio web, es importante cambiar en el fichero
  En caso contrario, con su valor por defecto ("1") 
  los cambios que realices en los ficheros WSDL no tendrán 
  efecto de forma inmediata.
+
+  También se puede hacer por cada archivo, sin modificar el php.ini con la siguiente instrucción al comienzo del script php:
+ ini_set('soap.wsdl_cache_enabled',0);

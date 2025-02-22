@@ -1,0 +1,26 @@
+Hay un bug en wsdl2phpgenerator:
+
+comenta las líneas 156-158 del fichero
+vendor\wsdl2phpgenerator\lib\PhpClass.php
+
+
+OTRO AVISO de BUG:
+Cuando se generan las clases usando wsdl2phpgenerator a partir del WSDL, aparece una clase Gate.php
+  hay que cambiar de línea 64 a 67 por:
+
+  DE: 
+
+    public function ISOCodesDetailed(ISOCodesDetailed $parameters)
+    {
+      return $this->__soapCall('ISOCodesDetailed', array($parameters));
+    }
+
+
+  A: 
+  
+    public function ISOCodesDetailed(ISOCodesDetailed $parameters)
+    {
+      return $this->__soapCall('ISOCodesDetailed', []);
+    }
+
+   

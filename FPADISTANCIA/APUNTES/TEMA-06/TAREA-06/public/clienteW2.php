@@ -3,14 +3,18 @@ require '../vendor/autoload.php';
 
 use Clases\Clases1\ClasesOperacionesService;
 
-$url = 'http://127.0.0.1/dwes_tema_06/TAREA-06/servidorSoap/servicio.wsdl';
+$host        = "dwcs.localhost";
+$urlrelativo = "/FPADISTANCIA/APUNTES/TEMA-06/TAREA-06/servidorSoap";
+$uri         = "http://" . $host . $urlrelativo;
+$url         = $uri . "/servicio.wsdl";
+
 try {
     $cliente = new SoapClient($url);
 } catch (SoapFault $f) {
     die("Error en cliente SOAP:" . $f->getMessage());
 }
 
-$codP = 2;
+$codP = 13;
 $codT = 1;
 $codF = 'MP3';
 

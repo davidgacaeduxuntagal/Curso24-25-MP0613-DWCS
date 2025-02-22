@@ -1,0 +1,1550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://UASI/WS_GESTDOCENTE.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://UASI/WS_GESTDOCENTE.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://UASI/WS_GESTDOCENTE.wsdl">
+      <s:element name="wsagrupaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodcen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsagrupacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsagrupacionesResult" type="tns:ArrayOfClaseAgrupaciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseAgrupaciones">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseAgrupaciones" nillable="true" type="tns:ClaseAgrupaciones" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseAgrupaciones">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idagrupa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descagr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="enlaceagrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codcen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desccen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numcurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomturno" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsfechaexamenesasi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodconvoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="porden" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsfechaexamenesasiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsfechaexamenesasiResult" type="tns:ArrayOfClaseFechaExamenesAsi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseFechaExamenesAsi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseFechaExamenesAsi" nillable="true" type="tns:ClaseFechaExamenesAsi" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseFechaExamenesAsi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codconv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="conv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numcurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desccurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="complform" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechareal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horaini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aulasig" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orden" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsfechaexamenesasitotal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodconvoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="porden" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsfechaexamenesasitotalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsfechaexamenesasitotalResult" type="tns:ArrayOfClaseFechaExamenesAsiTotal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseFechaExamenesAsiTotal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseFechaExamenesAsiTotal" nillable="true" type="tns:ClaseFechaExamenesAsiTotal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseFechaExamenesAsiTotal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codconv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="conv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numcurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desccurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="complform" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechareal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horaini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aulasig" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="flgaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="turno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="capacidad_aulas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observa_ge" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsfechaexamenesasinue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodconv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="porden" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsfechaexamenesasinueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsfechaexamenesasinueResult" type="tns:ArrayOfClaseFechaExamenesAsiNue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseFechaExamenesAsiNue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseFechaExamenesAsiNue" nillable="true" type="tns:ClaseFechaExamenesAsiNue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseFechaExamenesAsiNue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codexa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idactiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codconv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="conv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idperiodo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechareal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horaini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="diasemana" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abrdsm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dsm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aulasig" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="campus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="edificio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="flgaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="turno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="capacidad_aulas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observa_ge" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsfechaexamenesplan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodconv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="porden" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsfechaexamenesplanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsfechaexamenesplanResult" type="tns:ArrayOfClaseFechaExamenesPlan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseFechaExamenesPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseFechaExamenesPlan" nillable="true" type="tns:ClaseFechaExamenesPlan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseFechaExamenesPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codexa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idactiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codconv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="conv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idperiodo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numcurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desccurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechareal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horaini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="diasemana" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="abrdsm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dsm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aulasig" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="campus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="edificio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="flgaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="turno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="capacidad_aulas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observa_ge" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsasidepto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcoddep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodarea" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsasideptoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsasideptoResult" type="tns:ArrayOfClaseAsiDepto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseAsiDepto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseAsiDepto" nillable="true" type="tns:ClaseAsiDepto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseAsiDepto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="enlaceasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cred_teoasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cred_prasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cred_asignatura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cred_no_presenciales" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cred_teodepare" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cred_pradepare" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsdatosasig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsdatosasigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsdatosasigResult" type="tns:ArrayOfClaseDatosAsig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseDatosAsig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseDatosAsig" nillable="true" type="tns:ClaseDatosAsig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseDatosAsig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="caca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasicorto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crdtsteo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crdtspra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crdtects" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duracion_codalf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tfg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="programa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wshorarioagrp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagrupa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wshorarioagrpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wshorarioagrpResult" type="tns:ArrayOfClaseHorarioAgrp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseHorarioAgrp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseHorarioAgrp" nillable="true" type="tns:ClaseHorarioAgrp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseHorarioAgrp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idagrupa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descagr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dni" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="apellido1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="apellido2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idplaza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomplaz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechainicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horaini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idactiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="teopra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="diasem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="edificio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aulasig" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wshorarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="porden" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wshorariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wshorariosResult" type="tns:ArrayOfClaseHorarios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseHorarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseHorarios" nillable="true" type="tns:ClaseHorarios" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseHorarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="teopra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codgrp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ejecodnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vaccodnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gaccodnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechainicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="diasemana" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horaini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="horafin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descaula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aulasig" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clase_activ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descactiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descgrupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="esara_sn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idioma" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="capacidadgrupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="flgcpc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nodocodnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="placodalf" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wstitulosuni">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wstitulosuniResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wstitulosuniResult" type="tns:ArrayOfClaseTitulosUni" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseTitulosUni">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseTitulosUni" nillable="true" type="tns:ClaseTitulosUni" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseTitulosUni">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="imagen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsdatosplan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="psubtipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodcen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pflgmovil" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsdatosplanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsdatosplanResult" type="tns:ArrayOfClaseDatosPlan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseDatosPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseDatosPlan" nillable="true" type="tns:ClaseDatosPlan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseDatosPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codestgen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomestgen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subtipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subtiponombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codcen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomcen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="anoini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="anofin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codruct" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ncursos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipogra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="urlmovil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="imagenmovil" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsplanesasig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsplanesasigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsplanesasigResult" type="tns:ArrayOfClasePlanesAsig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClasePlanesAsig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClasePlanesAsig" nillable="true" type="tns:ClasePlanesAsig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClasePlanesAsig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="curso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="asignatura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codplan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomplan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codcen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsplanesdep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcoddep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsplanesdepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsplanesdepResult" type="tns:ArrayOfClasePlanesDep" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClasePlanesDep">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClasePlanesDep" nillable="true" type="tns:ClasePlanesDep" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClasePlanesDep">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="curso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="coddep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codplan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomplan" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsdptoasig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsdptoasigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsdptoasigResult" type="tns:ArrayOfClaseDptoAsig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseDptoAsig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseDptoAsig" nillable="true" type="tns:ClaseDptoAsig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseDptoAsig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="responsable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="porcentaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsareasdpto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcoddep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsareasdptoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsareasdptoResult" type="tns:ArrayOfClaseAreasDpto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseAreasDpto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseAreasDpto" nillable="true" type="tns:ClaseAreasDpto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseAreasDpto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codarea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomarea" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsdptocen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodcen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcoddep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsdptocenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsdptocenResult" type="tns:ArrayOfClaseDptoCen" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseDptoCen">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseDptoCen" nillable="true" type="tns:ClaseDptoCen" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseDptoCen">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codcen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="coddep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomdep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emaildep" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsasiplan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsasiplanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsasiplanResult" type="tns:ArrayOfClaseAsiPlan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseAsiPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseAsiPlan" nillable="true" type="tns:ClaseAsiPlan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseAsiPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="caca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomasicorto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ciclo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="curso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desccurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ofertada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="docencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="complform" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crdtsteo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crdtspra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crdtsects" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tfg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="estadoasi" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wscalificaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wscalificacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wscalificacionesResult" type="tns:ArrayOfClaseCalificaciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseCalificaciones">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseCalificaciones" nillable="true" type="tns:ClaseCalificaciones" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseCalificaciones">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcionasi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ranmin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ranmax" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsconvocatorias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pidgrupo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsconvocatoriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsconvocatoriasResult" type="tns:ArrayOfClaseConvocatorias" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseConvocatorias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseConvocatorias" nillable="true" type="tns:ClaseConvocatorias" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseConvocatorias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsgruposasi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsgruposasiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsgruposasiResult" type="tns:ArrayOfClaseGrupoAsi" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseGrupoAsi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseGrupoAsi" nillable="true" type="tns:ClaseGrupoAsi" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseGrupoAsi">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ejecodnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vaccodnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gaccodnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="turno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idioma" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="duracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idgrpactiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="claseactiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descactiv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="capacidadgrupo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nodocodnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="placodalf" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsconvemovilidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptipoflujo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsconvemovilidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsconvemovilidadResult" type="tns:ArrayOfClaseConveMovilidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseConveMovilidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseConveMovilidad" nillable="true" type="tns:ClaseConveMovilidad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseConveMovilidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="tip_codnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="uni_codalf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pai_codalf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomuni" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="are_codalf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc_area_eng" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc_area_val" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desc_area_cas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plazas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="meses" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vigente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desde" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hasta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="flgmodificable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="disp_desidi2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prog_codnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cen_codnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nom_centro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idi_universidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="modo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idiomas_nivel1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idiomas_nivel2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idiomas_nivel3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomcoordina" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="promotor_ua" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="web_uni" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="web_oficina" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wstitulospropiosuni">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plengua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptipocurso" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wstitulospropiosuniResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wstitulospropiosuniResult" type="tns:ArrayOfClaseTitulosPropiosUni" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClaseTitulosPropiosUni">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseTitulosPropiosUni" nillable="true" type="tns:ClaseTitulosPropiosUni" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseTitulosPropiosUni">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipocurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="desctipocurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="imagen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wsreqidiomab1plan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcodest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcodasi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcurso" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsreqidiomab1planResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsreqidiomab1planResult" type="tns:ClaseReqidiomab1plan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClaseReqidiomab1plan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="tienerequisitob1" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="wsagrupacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:wsagrupaciones" />
+  </wsdl:message>
+  <wsdl:message name="wsagrupacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:wsagrupacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsfechaexamenesasiSoapIn">
+    <wsdl:part name="parameters" element="tns:wsfechaexamenesasi" />
+  </wsdl:message>
+  <wsdl:message name="wsfechaexamenesasiSoapOut">
+    <wsdl:part name="parameters" element="tns:wsfechaexamenesasiResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsfechaexamenesasitotalSoapIn">
+    <wsdl:part name="parameters" element="tns:wsfechaexamenesasitotal" />
+  </wsdl:message>
+  <wsdl:message name="wsfechaexamenesasitotalSoapOut">
+    <wsdl:part name="parameters" element="tns:wsfechaexamenesasitotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsfechaexamenesasinueSoapIn">
+    <wsdl:part name="parameters" element="tns:wsfechaexamenesasinue" />
+  </wsdl:message>
+  <wsdl:message name="wsfechaexamenesasinueSoapOut">
+    <wsdl:part name="parameters" element="tns:wsfechaexamenesasinueResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsfechaexamenesplanSoapIn">
+    <wsdl:part name="parameters" element="tns:wsfechaexamenesplan" />
+  </wsdl:message>
+  <wsdl:message name="wsfechaexamenesplanSoapOut">
+    <wsdl:part name="parameters" element="tns:wsfechaexamenesplanResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsasideptoSoapIn">
+    <wsdl:part name="parameters" element="tns:wsasidepto" />
+  </wsdl:message>
+  <wsdl:message name="wsasideptoSoapOut">
+    <wsdl:part name="parameters" element="tns:wsasideptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsdatosasigSoapIn">
+    <wsdl:part name="parameters" element="tns:wsdatosasig" />
+  </wsdl:message>
+  <wsdl:message name="wsdatosasigSoapOut">
+    <wsdl:part name="parameters" element="tns:wsdatosasigResponse" />
+  </wsdl:message>
+  <wsdl:message name="wshorarioagrpSoapIn">
+    <wsdl:part name="parameters" element="tns:wshorarioagrp" />
+  </wsdl:message>
+  <wsdl:message name="wshorarioagrpSoapOut">
+    <wsdl:part name="parameters" element="tns:wshorarioagrpResponse" />
+  </wsdl:message>
+  <wsdl:message name="wshorariosSoapIn">
+    <wsdl:part name="parameters" element="tns:wshorarios" />
+  </wsdl:message>
+  <wsdl:message name="wshorariosSoapOut">
+    <wsdl:part name="parameters" element="tns:wshorariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="wstitulosuniSoapIn">
+    <wsdl:part name="parameters" element="tns:wstitulosuni" />
+  </wsdl:message>
+  <wsdl:message name="wstitulosuniSoapOut">
+    <wsdl:part name="parameters" element="tns:wstitulosuniResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsdatosplanSoapIn">
+    <wsdl:part name="parameters" element="tns:wsdatosplan" />
+  </wsdl:message>
+  <wsdl:message name="wsdatosplanSoapOut">
+    <wsdl:part name="parameters" element="tns:wsdatosplanResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsplanesasigSoapIn">
+    <wsdl:part name="parameters" element="tns:wsplanesasig" />
+  </wsdl:message>
+  <wsdl:message name="wsplanesasigSoapOut">
+    <wsdl:part name="parameters" element="tns:wsplanesasigResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsplanesdepSoapIn">
+    <wsdl:part name="parameters" element="tns:wsplanesdep" />
+  </wsdl:message>
+  <wsdl:message name="wsplanesdepSoapOut">
+    <wsdl:part name="parameters" element="tns:wsplanesdepResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsdptoasigSoapIn">
+    <wsdl:part name="parameters" element="tns:wsdptoasig" />
+  </wsdl:message>
+  <wsdl:message name="wsdptoasigSoapOut">
+    <wsdl:part name="parameters" element="tns:wsdptoasigResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsareasdptoSoapIn">
+    <wsdl:part name="parameters" element="tns:wsareasdpto" />
+  </wsdl:message>
+  <wsdl:message name="wsareasdptoSoapOut">
+    <wsdl:part name="parameters" element="tns:wsareasdptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsdptocenSoapIn">
+    <wsdl:part name="parameters" element="tns:wsdptocen" />
+  </wsdl:message>
+  <wsdl:message name="wsdptocenSoapOut">
+    <wsdl:part name="parameters" element="tns:wsdptocenResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsasiplanSoapIn">
+    <wsdl:part name="parameters" element="tns:wsasiplan" />
+  </wsdl:message>
+  <wsdl:message name="wsasiplanSoapOut">
+    <wsdl:part name="parameters" element="tns:wsasiplanResponse" />
+  </wsdl:message>
+  <wsdl:message name="wscalificacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:wscalificaciones" />
+  </wsdl:message>
+  <wsdl:message name="wscalificacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:wscalificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsconvocatoriasSoapIn">
+    <wsdl:part name="parameters" element="tns:wsconvocatorias" />
+  </wsdl:message>
+  <wsdl:message name="wsconvocatoriasSoapOut">
+    <wsdl:part name="parameters" element="tns:wsconvocatoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsgruposasiSoapIn">
+    <wsdl:part name="parameters" element="tns:wsgruposasi" />
+  </wsdl:message>
+  <wsdl:message name="wsgruposasiSoapOut">
+    <wsdl:part name="parameters" element="tns:wsgruposasiResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsconvemovilidadSoapIn">
+    <wsdl:part name="parameters" element="tns:wsconvemovilidad" />
+  </wsdl:message>
+  <wsdl:message name="wsconvemovilidadSoapOut">
+    <wsdl:part name="parameters" element="tns:wsconvemovilidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="wstitulospropiosuniSoapIn">
+    <wsdl:part name="parameters" element="tns:wstitulospropiosuni" />
+  </wsdl:message>
+  <wsdl:message name="wstitulospropiosuniSoapOut">
+    <wsdl:part name="parameters" element="tns:wstitulospropiosuniResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsreqidiomab1planSoapIn">
+    <wsdl:part name="parameters" element="tns:wsreqidiomab1plan" />
+  </wsdl:message>
+  <wsdl:message name="wsreqidiomab1planSoapOut">
+    <wsdl:part name="parameters" element="tns:wsreqidiomab1planResponse" />
+  </wsdl:message>
+  <wsdl:portType name="pub_gestdocenteSoap">
+    <wsdl:operation name="wsagrupaciones">
+      <wsdl:input message="tns:wsagrupacionesSoapIn" />
+      <wsdl:output message="tns:wsagrupacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasi">
+      <wsdl:input message="tns:wsfechaexamenesasiSoapIn" />
+      <wsdl:output message="tns:wsfechaexamenesasiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasitotal">
+      <wsdl:input message="tns:wsfechaexamenesasitotalSoapIn" />
+      <wsdl:output message="tns:wsfechaexamenesasitotalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasinue">
+      <wsdl:input message="tns:wsfechaexamenesasinueSoapIn" />
+      <wsdl:output message="tns:wsfechaexamenesasinueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesplan">
+      <wsdl:input message="tns:wsfechaexamenesplanSoapIn" />
+      <wsdl:output message="tns:wsfechaexamenesplanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsasidepto">
+      <wsdl:input message="tns:wsasideptoSoapIn" />
+      <wsdl:output message="tns:wsasideptoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsdatosasig">
+      <wsdl:input message="tns:wsdatosasigSoapIn" />
+      <wsdl:output message="tns:wsdatosasigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wshorarioagrp">
+      <wsdl:input message="tns:wshorarioagrpSoapIn" />
+      <wsdl:output message="tns:wshorarioagrpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wshorarios">
+      <wsdl:input message="tns:wshorariosSoapIn" />
+      <wsdl:output message="tns:wshorariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wstitulosuni">
+      <wsdl:input message="tns:wstitulosuniSoapIn" />
+      <wsdl:output message="tns:wstitulosuniSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsdatosplan">
+      <wsdl:input message="tns:wsdatosplanSoapIn" />
+      <wsdl:output message="tns:wsdatosplanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsplanesasig">
+      <wsdl:input message="tns:wsplanesasigSoapIn" />
+      <wsdl:output message="tns:wsplanesasigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsplanesdep">
+      <wsdl:input message="tns:wsplanesdepSoapIn" />
+      <wsdl:output message="tns:wsplanesdepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsdptoasig">
+      <wsdl:input message="tns:wsdptoasigSoapIn" />
+      <wsdl:output message="tns:wsdptoasigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsareasdpto">
+      <wsdl:input message="tns:wsareasdptoSoapIn" />
+      <wsdl:output message="tns:wsareasdptoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsdptocen">
+      <wsdl:input message="tns:wsdptocenSoapIn" />
+      <wsdl:output message="tns:wsdptocenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsasiplan">
+      <wsdl:input message="tns:wsasiplanSoapIn" />
+      <wsdl:output message="tns:wsasiplanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wscalificaciones">
+      <wsdl:input message="tns:wscalificacionesSoapIn" />
+      <wsdl:output message="tns:wscalificacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsconvocatorias">
+      <wsdl:input message="tns:wsconvocatoriasSoapIn" />
+      <wsdl:output message="tns:wsconvocatoriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsgruposasi">
+      <wsdl:input message="tns:wsgruposasiSoapIn" />
+      <wsdl:output message="tns:wsgruposasiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsconvemovilidad">
+      <wsdl:input message="tns:wsconvemovilidadSoapIn" />
+      <wsdl:output message="tns:wsconvemovilidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wstitulospropiosuni">
+      <wsdl:input message="tns:wstitulospropiosuniSoapIn" />
+      <wsdl:output message="tns:wstitulospropiosuniSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsreqidiomab1plan">
+      <wsdl:input message="tns:wsreqidiomab1planSoapIn" />
+      <wsdl:output message="tns:wsreqidiomab1planSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="pub_gestdocenteSoap" type="tns:pub_gestdocenteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsagrupaciones">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsagrupaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasi">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsfechaexamenesasi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasitotal">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsfechaexamenesasitotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasinue">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsfechaexamenesasinue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesplan">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsfechaexamenesplan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsasidepto">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsasidepto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsdatosasig">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsdatosasig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wshorarioagrp">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wshorarioagrp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wshorarios">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wshorarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wstitulosuni">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wstitulosuni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsdatosplan">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsdatosplan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsplanesasig">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsplanesasig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsplanesdep">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsplanesdep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsdptoasig">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsdptoasig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsareasdpto">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsareasdpto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsdptocen">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsdptocen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsasiplan">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsasiplan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wscalificaciones">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wscalificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsconvocatorias">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsconvocatorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsgruposasi">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsgruposasi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsconvemovilidad">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsconvemovilidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wstitulospropiosuni">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wstitulospropiosuni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsreqidiomab1plan">
+      <soap:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsreqidiomab1plan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="pub_gestdocenteSoap12" type="tns:pub_gestdocenteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wsagrupaciones">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsagrupaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasi">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsfechaexamenesasi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasitotal">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsfechaexamenesasitotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesasinue">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsfechaexamenesasinue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsfechaexamenesplan">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsfechaexamenesplan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsasidepto">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsasidepto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsdatosasig">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsdatosasig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wshorarioagrp">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wshorarioagrp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wshorarios">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wshorarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wstitulosuni">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wstitulosuni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsdatosplan">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsdatosplan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsplanesasig">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsplanesasig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsplanesdep">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsplanesdep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsdptoasig">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsdptoasig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsareasdpto">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsareasdpto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsdptocen">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsdptocen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsasiplan">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsasiplan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wscalificaciones">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wscalificaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsconvocatorias">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsconvocatorias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsgruposasi">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsgruposasi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsconvemovilidad">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsconvemovilidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wstitulospropiosuni">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wstitulospropiosuni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsreqidiomab1plan">
+      <soap12:operation soapAction="http://UASI/WS_GESTDOCENTE.wsdl/wsreqidiomab1plan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="pub_gestdocente">
+    <wsdl:port name="pub_gestdocenteSoap" binding="tns:pub_gestdocenteSoap">
+      <soap:address location="https://cvnet.cpd.ua.es/servicioweb/publicos/pub_gestdocente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="pub_gestdocenteSoap12" binding="tns:pub_gestdocenteSoap12">
+      <soap12:address location="https://cvnet.cpd.ua.es/servicioweb/publicos/pub_gestdocente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

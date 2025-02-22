@@ -1,15 +1,17 @@
 <?php
-$url = 'http://127.0.0.1/dwes_tema_06/TAREA-06/servidorSoap/servicio.php';
-$uri = 'http://127.0.0.1/dwes_tema_06/TAREA-06/servidorSoap';
 
+$host        = "dwcs.localhost";
+$urlrelativo = "/FPADISTANCIA/APUNTES/TEMA-06/TAREA-06/servidorSoap";
+$uri         = "http://" . $host . $urlrelativo;
+$url         = $uri . "/servicio.php";
 
 try {
     $cliente = new SoapClient(null, ['location' => $url, 'uri' => $uri]);
 } catch (SoapFault $f) {
     die("Error en cliente SOAP:" . $f->getMessage());
 }
-$codP = 2;
-$codT = 14;
+$codP = 13;
+$codT = 1;
 $codF = 'CONSOL';
 
 //funcion getPvp ----------------------------------------------------------------------------

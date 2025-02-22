@@ -1,4 +1,8 @@
 <?php
+ini_set('soap.wsdl_cache_enabled',0);
+ini_set('soap.wsdl_cache_ttl',0);
+// ini_set('always_populate_raw_post_data',-1);
+
    class Operaciones {
      public function resta($a, $b)  {
        return $a - $b;
@@ -12,8 +16,10 @@
        return "¡¡¡Hola $texto!!!";
      }
    }
-
-   $uri='http://127.0.0.1/dwes_tema_06/servicioSoap/servidorSoap';
+ 
+   $host = "dwcs.localhost";
+   $urlrelativo = "/FPADISTANCIA/APUNTES/TEMA-06/apuntes_2_2_0_servicioSoap/servidorSoap";
+   $uri = "http://" . $host . $urlrelativo;
    $parametros=['uri'=>$uri];
    
    try {
@@ -22,4 +28,5 @@
      $server->handle();
    } catch (SoapFault $f) {
      die("error en server: " . $f->getMessage());
-   }  
+   } 
+   // OJO: no se debe incluir ninguna salida adicional a partir de aquí, o se añadirá al XML de respuesta

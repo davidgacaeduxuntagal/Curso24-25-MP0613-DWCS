@@ -12,7 +12,7 @@ $lat    = '42.264799151433';
 $lon    = '-8.765128490705925';
 
 // Meter aquí la API key que figura en la web:
-include("../claves.inc.php");
+include("../../claves.inc.php");
 $url1   = $urlBase1 . 'q=' . $ciudad . '&limit=5' . "&appid=" .  $keyOpenWeatherMap;
 $url2   = $urlBase2 . '&lat=' . $lat . "&lon=" . $lon . "&units=metric". "&lang=es". "&appid=" . $keyOpenWeatherMap;
 

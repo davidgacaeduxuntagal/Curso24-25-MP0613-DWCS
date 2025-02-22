@@ -7,7 +7,7 @@
             let peticion;
             const iniciar = () => {
                 peticion = new XMLHttpRequest();
-                peticion.open('POST', "http://localhost/P-MP0612-DWCS/FPADISTANCIA/TEMA-07/P02_01_00/procesar.php"); 
+                peticion.open('POST', "http://dwcs.localhost/FPADISTANCIA/APUNTES/TEMA-07/EXTRA_AJAX/P02_02_00/procesar.php"); 
                 peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 peticion.send('nombre=Bob&apellidos=Esponja');
                 peticion.addEventListener("load", cargada);

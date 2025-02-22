@@ -63,7 +63,7 @@ $respuesta = curl_exec($curl);
 $err = curl_error($curl);
 curl_close($curl);
 
-// Sanitizar la cadena para que solo tenga UTF-8 válidos, si no json_decode casca
+// Sanitizar la cadena para que solo tenga UTF-8 válidos, sino json_decode casca
 $respuesta = mb_convert_encoding($respuesta, 'UTF-8', 'UTF-8');
 // file_put_contents('estacionesmetereologicas.log', $respuesta);
 

@@ -7,7 +7,7 @@
          let peticion;
          const iniciar = () => {
             peticion = new XMLHttpRequest();
-            peticion.open('GET', "http://localhost/DWCS/FPADISTANCIA/TEMA-07/P01_03_01/fecha.php"); 
+            peticion.open('GET', "http://dwcs.localhost/FPADISTANCIA/APUNTES/TEMA-07/EXTRA_AJAX/P01_03_01/fecha.php"); 
             peticion.send();
             peticion.addEventListener("load", cargada);
             document.getElementById("estado").classList = [ 'cargando' ];

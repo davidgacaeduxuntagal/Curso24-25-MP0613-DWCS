@@ -7,7 +7,7 @@
             let peticion;
             const iniciar = () => {
                 peticion = new XMLHttpRequest();
-                peticion.open('GET', "http://localhost/P-MP0612-DWCS/FPADISTANCIA/TEMA-07/P02_04_00/datosjson.php"); 
+                peticion.open('GET', "http://dwcs.localhost/FPADISTANCIA/APUNTES/TEMA-07/EXTRA_AJAX/P02_04_00/datosjson.php"); 
                 peticion.send();
                 peticion.addEventListener("load", cargada);
             }

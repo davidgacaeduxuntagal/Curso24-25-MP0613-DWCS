@@ -7,7 +7,7 @@
          let peticion;
          const iniciar = () => {
             peticion = new XMLHttpRequest();
-            peticion.open('GET', "http://localhost/P-MP0612-DWCS/FPADISTANCIA/TEMA-07/P01_03_01b/fecha.php?$"); 
+            peticion.open('GET', "http://dwcs.localhost/FPADISTANCIA/APUNTES/TEMA-07/EXTRA_AJAX/P01_03_01/fecha.php"); 
             peticion.send();
             peticion.addEventListener("load", cargada);
             document.getElementById("estado").classList = [ 'cargando' ];
@@ -22,7 +22,7 @@
          }
 
          const ticks = () => {
-             setTimeout(iniciar, 10000);
+             setTimeout(iniciar, 5000);
          }
 
          window.addEventListener("load", iniciar, false);
@@ -41,7 +41,7 @@
    </head>
    <body>
       <p>
-         A continuación se cargarán por AJAX los datos recibidos en la solicitud ASINCRONA:
+         A continuación se cargarán, CADA 5 SEGUNDOS, por AJAX los datos recibidos en la solicitud ASINCRONA:
       </p>
       <p>
          Esta solicitud tardará 2 segundos aproximadamente, 

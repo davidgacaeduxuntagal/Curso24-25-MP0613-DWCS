@@ -1,4 +1,9 @@
-<xs:schema xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<!-- 
+   ESTA PRIMERA PARTE DE LA RESPUESTA HAY QUE ELIMINARLA PARA QUE SE PUEDA 
+   PARSEAR COMO UN XML VÁLIDO, POR ESO LA COMENTO
+   LA ELIMINAREMOS USANDO UNA EXPRESIÓN REGULAR EN PHP
+-->
+<!-- <xs:schema xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="NewDataSet">
     <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="ISOCodes"
         msdata:UseCurrentLocale="true">
@@ -39,7 +44,7 @@
             <xs:field xpath="ISO" />
         </xs:unique>
     </xs:element>
-</xs:schema>
+</xs:schema> -->
 <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
     xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
     <DocumentElement xmlns="">

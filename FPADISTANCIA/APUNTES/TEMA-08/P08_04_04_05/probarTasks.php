@@ -2,7 +2,7 @@
 session_start();
 require 'vendor/autoload.php';
 
-$redirect_uri = 'http://localhost/dwes_tema_08/P08_04_04_05/probarTasks.php';
+$redirect_uri = 'http://localhost/FPADISTANCIA/APUNTES/TEMA-08/P08_04_04_05/probarTasks.php';
 include("../claves.inc.php");
 
 

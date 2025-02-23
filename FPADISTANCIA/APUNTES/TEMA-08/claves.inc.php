@@ -12,4 +12,4 @@ $googleClientSecret = 'GOKWS-fgdfjdhfjdfhjejehfjdhfklal';
 
 // Claves para proyecto TAREA-08
 $googleClientIdTarea8     = '85445455455458-wefjfASFFAFASFkvjclvjclj.apps.googleusercontent.com'; 
-$googleClientSecretTarea8 = 'GAAWS-fgsdfsdfsfdsfejehfjdhfklal'; 
+$googleClientSecretTarea8 = 'GAAWS-fgsdfsdfsfdsfejehfjdhfklal';     

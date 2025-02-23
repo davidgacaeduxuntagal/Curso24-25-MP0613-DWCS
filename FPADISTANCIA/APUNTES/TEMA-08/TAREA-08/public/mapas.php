@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET['lat'])) {
-    header('Location;repartos.php');
+    header('Location: repartos.php');
     die();
 }
 

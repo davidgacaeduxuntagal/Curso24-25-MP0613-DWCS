@@ -10,7 +10,7 @@ if (!isset($_SESSION['usu'])) {
 
 $usu = $_SESSION['usu'];
 spl_autoload_register(function ($clase) {
-    include "./include/" . $clase . ".php";
+    include "../include/" . $clase . ".php";
 });
 
 
@@ -41,7 +41,7 @@ function pintarEstrellasPagina($p)  {
 }
 
 // Preparamos Jaxon:
-require (__DIR__ . '/include/Votar.php');
+require (__DIR__ . '/../include/Votar.php');
 
 use function Jaxon\jaxon;
 

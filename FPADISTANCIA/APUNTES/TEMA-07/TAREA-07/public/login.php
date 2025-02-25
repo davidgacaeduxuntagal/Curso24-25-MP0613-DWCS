@@ -1,5 +1,5 @@
 <?php
-require (__DIR__ . '/include/Validar.php');
+require (__DIR__ . '/../include/Validar.php');
 
 use function Jaxon\jaxon;
 

@@ -13,3 +13,6 @@ Si composer update pide un access token de GitHub, entonces tienes que:
 2) Ejecuta el comando siguiente para añadir tu token a la cache de tokens:
 
      composer config -g github-oauth.github.com <tu token> 
+
+
+3) Recuerda configurar tu Apache2 como se indica en la raíz de este repo (EJEMPLO-httpd-vhosts.conf)

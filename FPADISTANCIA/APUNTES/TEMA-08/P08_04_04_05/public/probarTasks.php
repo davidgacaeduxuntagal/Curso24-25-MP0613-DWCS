@@ -1,9 +1,9 @@
 <?php
 session_start();
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
-$redirect_uri = 'http://localhost/FPADISTANCIA/APUNTES/TEMA-08/P08_04_04_05/probarTasks.php';
-include("../claves.inc.php");
+$redirect_uri = 'http://localhost/FPADISTANCIA/APUNTES/TEMA-08/P08_04_04_05/public/probarTasks.php';
+include("../../claves.inc.php");
 
 
 // Crear la solicitud de cliente 
@@ -60,7 +60,7 @@ if (count($results->getItems()) == 0) {
 
 
 //cambia el id por el de la lista de tareas tuya
-$res1 = $service->tasks->listTasks("UlZzTm82YXM5dm5hYXE2Rg"); 
+$res1 = $service->tasks->listTasks("MDU2NjY2NDc2MjM3NDYyNTU5MTM6MDow"); 
 
 echo   "<p><strong>Listando tareas de la lista seleccionada:</strong></p>";
 foreach ($res1->getItems() as $tasklist) {
@@ -78,7 +78,7 @@ $op    = ["title"=>"Entregar Trabajo DWES", "notes"=>"Formato pdf", "due"=>"2023
 $tarea = new Google_Service_Tasks_Task($op);
 
 //pon el id de tu lista de tareas
-$service->tasks->insert('UlZzTm82YXM5dm5hYXE2Rg', $tarea); 
+$service->tasks->insert('MDU2NjY2NDc2MjM3NDYyNTU5MTM6MDow', $tarea); 
 
 //id_tasklist, idtask (Pon las tuyas)
 //$service->tasks->delete("UlZzTm82YXM5dm5hYXE2Rg", "bU9hVFBDWlFPdFhnbVJGaQ"); 

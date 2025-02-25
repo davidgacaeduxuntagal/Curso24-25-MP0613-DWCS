@@ -10,7 +10,6 @@ require(__DIR__ . '/../vendor/autoload.php');
 
 use Jaxon\Jaxon;
 use function Jaxon\jaxon;
-use Jaxon\Response\Response;
 
 //cargamos los productos
 $lista = new Producto();
@@ -109,8 +108,8 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
 </body>
 <?php
 //  Injectamos los scripts javascript antes de enviar la página:
-$jaxon = jaxon();
-echo $jaxon->getCss(), "\n", $jaxon->getJs(), "\n", $jaxon->getScript(), "\n";
-echo "<!-- HTTP comment  -->\n"
+echo $jaxon->getCss();
+echo $jaxon->getJs();
+echo $jaxon->getScript();
 ?>
 </html>

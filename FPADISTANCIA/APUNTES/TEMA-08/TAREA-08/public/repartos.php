@@ -4,7 +4,6 @@ require(__DIR__ . '/../vendor/autoload.php');
 
 use Jaxon\Jaxon;
 use function Jaxon\jaxon;
-use Jaxon\Response\Response;
 
 
 $corAlmacen = "36.86071,-2.440779";
@@ -230,7 +229,8 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
 <?php
 //  Injectamos los scripts javascript antes de enviar la página:
 $jaxon = jaxon();
-echo $jaxon->getCss(), "\n", $jaxon->getJs(), "\n", $jaxon->getScript(), "\n";
-echo "<!-- HTTP comment  -->\n"
+echo $jaxon->getCss();
+echo $jaxon->getJs();
+echo $jaxon->getScript();
 ?>
 </html>

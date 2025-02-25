@@ -10,7 +10,7 @@ class Tiempo  {
     private $revGeocodeUrl;
 
     public function __construct($la, $lo)   {
-        include("../claves.inc.php");
+        include("../../claves.inc.php");
      
         // Preparar datos acceso a consulta REST tiempo:
         $urlCompleto = $this->urlTiempo . '&lat=' . $la . "&lon=" . $lo . "&units=metric". "&lang=es" ."&appid=" . $keyOpenWeatherMap;

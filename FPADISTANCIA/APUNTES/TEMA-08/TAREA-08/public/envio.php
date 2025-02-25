@@ -41,7 +41,7 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
     <!--Fontawesome CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Apartado 4-3</title>
-    <script type="text/javascript" src="../js/funciones.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>
 </head>
 
 <body style="background:#00bfa5;">

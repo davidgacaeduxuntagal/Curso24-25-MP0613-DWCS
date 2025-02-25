@@ -61,7 +61,7 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Repartos</title>
-    <script src="../js/funciones.js"></script>
+    <script src="js/funciones.js"></script>
 </head>
 
 <body style="background:#00bfa5;">

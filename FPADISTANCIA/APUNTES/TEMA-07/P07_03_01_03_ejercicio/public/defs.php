@@ -1,9 +1,8 @@
 <?php
-require (__DIR__ . '/vendor/autoload.php');
-require (__DIR__ . '/include/Usuario.php');
+require (__DIR__ . '/../vendor/autoload.php');
+require (__DIR__ . '/../include/Usuario.php');
 
 use Jaxon\Jaxon;
-// use Jaxon\Response\Response;
 use function Jaxon\jaxon;
 
 $jaxon = jaxon();

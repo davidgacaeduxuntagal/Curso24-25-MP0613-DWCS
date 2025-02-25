@@ -6,7 +6,7 @@ if(!isset($_SESSION['usu'])){
     die();
 }
 
-require './include/Producto.php';
+require '../include/Producto.php';
 
 $productos=new Producto();
 $todos=$productos->listadoProductos();

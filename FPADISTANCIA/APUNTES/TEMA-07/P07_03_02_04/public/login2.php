@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 YsJQueryAutoloader::register();
 YsJQuery::usePlugin(YsJQueryConstant::PLUGIN_JQVALIDATE);
 

@@ -1,11 +1,9 @@
 <?php
 //1.- Incluimos las librerias Jaxon
-require(__DIR__ . '/vendor/autoload.php');
+require(__DIR__ . '/../vendor/autoload.php');
 
 use Jaxon\Jaxon;
 use function Jaxon\jaxon;
-use Jaxon\Response\Response;
-
 
 //2.- Creamos las funciones de validación que serán lammadas desde JS
 function validarNombre($nombre){
@@ -135,8 +133,8 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
 </body>
 <?php
 // 6.- Injectamos los scripts javascript antes de enviar la página:
-$jaxon = jaxon();
-echo $jaxon->getCss(), "\n", $jaxon->getJs(), "\n", $jaxon->getScript(), "\n";
-echo "<!-- HTTP comment  -->\n"
+echo $jaxon->getCss();
+echo $jaxon->getJs();
+echo $jaxon->getScript();
 ?>
 </html>

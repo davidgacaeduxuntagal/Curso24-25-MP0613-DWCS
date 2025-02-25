@@ -55,8 +55,9 @@ use function Jaxon\jaxon;
 </body>
 <?php
 $jaxon = jaxon();
-echo $jaxon->getCss(), "\n", $jaxon->getJs(), "\n", $jaxon->getScript(), "\n";
-echo "<!-- HTTP comment  -->\n"
+echo $jaxon->getCss();
+echo $jaxon->getJs();
+echo $jaxon->getScript();
 ?>
 
 </html>

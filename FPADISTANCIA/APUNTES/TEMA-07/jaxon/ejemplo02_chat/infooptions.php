@@ -2,6 +2,7 @@
 require (__DIR__ . '/vendor/autoload.php');
 
 use Jaxon\Jaxon;
+use function Jaxon\jaxon;
 
 // Get the core singleton object
 $jaxon = jaxon();

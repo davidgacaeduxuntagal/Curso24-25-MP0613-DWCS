@@ -2,7 +2,6 @@
 require (__DIR__ . '/vendor/autoload.php');
 
 use Jaxon\Jaxon;
-use Jaxon\Response\Response;
 use function Jaxon\jaxon;
 
 // 1. Obtenemos una referencia al objeto singleton jaxon
@@ -39,7 +38,7 @@ $jaxon->register(Jaxon::CALLABLE_FUNCTION, 'getLogDelChat');
 
 // Ejemplo de como usar nuestra librería javascript Jaxon local:
 //  si hacemos esto, debemos comentar la línea al final de esta página echo $jaxon->getJs();
-$jaxon->setOption('js.lib.uri', '/js/');
+// $jaxon->setOption('js.lib.uri', '/js/');
 
 
 // 5. Dejamos todo preparado para procesar las solicitudes Jaxon entrantes
@@ -52,7 +51,7 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
 <head>
     <meta charset="utf-8">
     <title>Jaxon Chat</title>
-    <script src="js/jaxon.core.js"></script>
+    <!-- <script src="js/jaxon.core.js"></script> -->
 <?php
    // 6. Insertamos el codigo de Jaxon CSS en la página
    // echo $jaxon->getCss();
@@ -97,7 +96,7 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
 </body>
 <?php
 // 7. Insertamos el codigo javascript de Jaxon javascript al final de la página
-// echo $jaxon->getJs();
+echo $jaxon->getJs();
 echo $jaxon->getScript();
 ?>      
 </html>

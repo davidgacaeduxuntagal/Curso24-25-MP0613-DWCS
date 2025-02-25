@@ -1,0 +1,22 @@
+{
+    "name": "david/example2x",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Clases\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David García Cancio",
+            "email": "davidgaca@iesrodeira.gal"
+        }
+    ],
+    "require-dev": {
+        "jaxon-php/jaxon-core": "dev-main",
+        "jaxon-php/jaxon-dialogs": "dev-main",
+        "jaxon-php/jaxon-flot": "dev-main",
+        "keradus/psr4autoloader": "dev-master"
+    },
+    "minimum-stability": "dev"
+}

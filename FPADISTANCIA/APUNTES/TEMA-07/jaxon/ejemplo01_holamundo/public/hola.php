@@ -2,7 +2,6 @@
 require (__DIR__ . '/../vendor/autoload.php');
 
 use Jaxon\Jaxon;
-use Jaxon\Response\Response;
 use function Jaxon\jaxon; 
 
 // La clase HolaMundo

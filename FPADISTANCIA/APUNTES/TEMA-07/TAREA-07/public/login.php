@@ -21,7 +21,6 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Formulario JAXON</title>
     <script type="text/javascript" src="validar.js"></script>
-
 </head>
 
 <body style="background:#00bfa5;">
@@ -39,7 +38,6 @@ if($jaxon->canProcessRequest())  $jaxon->processRequest();
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" class="form-control" placeholder="usuario" id='usu' name='usu'>
-
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">

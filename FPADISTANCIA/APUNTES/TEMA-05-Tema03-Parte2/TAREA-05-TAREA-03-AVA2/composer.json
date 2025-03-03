@@ -1,0 +1,28 @@
+{
+    "name": "usuario/practica",
+    "description": "Practica Unidad 5",
+    "type": "project",
+    "config": {
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Clases\\": "src"
+        }
+    },
+    "license": "GNU/GPL",
+    "authors": [
+        {
+            "name": "usuario",
+            "email": "usuario@correo.es"
+        }
+    ],
+    "require": {
+        "philo/laravel-blade": "^3.1",
+        "milon/barcode": "^6.0",
+        "fzaninotto/faker": "^1.5"
+    }
+}

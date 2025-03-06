@@ -1,4 +1,4 @@
-<!-- codigo ejemplo T04-01-02 -->
+<!-- codigo ejemplo 01-02 -->
 <!DOCTYPE html>
 <html lang="es">
 

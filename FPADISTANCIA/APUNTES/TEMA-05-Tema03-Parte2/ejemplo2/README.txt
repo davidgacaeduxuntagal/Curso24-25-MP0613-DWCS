@@ -1,0 +1,1 @@
+Este ejemplo se estudia en los apuntes apartado: 1.7.- Ejemplo de POO en PHP

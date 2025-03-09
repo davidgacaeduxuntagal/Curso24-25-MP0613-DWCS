@@ -133,6 +133,7 @@ class Producto extends Conexion
         } else {
             $consulta = "select * from productos where nombre_corto = :nc AND id != :i";
         }
+        
         $stmt = $this->conexion->prepare($consulta);
         try {
             if ($this->id == null)

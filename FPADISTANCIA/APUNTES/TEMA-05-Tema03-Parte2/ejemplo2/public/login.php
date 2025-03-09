@@ -57,7 +57,6 @@ if (isset($_POST['login'])) {
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" class="form-control" placeholder="usuario" name='usuario' required>
-
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">

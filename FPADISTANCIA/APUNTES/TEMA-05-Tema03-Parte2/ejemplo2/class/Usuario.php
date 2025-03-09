@@ -10,6 +10,7 @@ class Usuario extends Conexion
     {
         parent::__construct();
     }
+    
     public function isValido($u, $p)
     {
         $pass1 = hash('sha256', $p);

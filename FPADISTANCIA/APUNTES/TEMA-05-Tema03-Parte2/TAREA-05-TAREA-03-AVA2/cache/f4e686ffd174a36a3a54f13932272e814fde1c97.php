@@ -49,7 +49,6 @@
 
         </div>
 
-        
         <?php if(!isset($code)): ?>
             <button type="button" onclick="return confirm('Debe generar un código de barras antes')" class="btn btn-primary mr-3" name="enviar">Crear</button>        
         <?php else: ?>

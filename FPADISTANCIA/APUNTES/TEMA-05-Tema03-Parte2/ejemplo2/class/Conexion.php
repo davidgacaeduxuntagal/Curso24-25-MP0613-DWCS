@@ -17,12 +17,10 @@ class Conexion
         $this->pass = "secreto";
         $this->dsn = "mysql:host={$this->host};dbname={$this->db};charset=utf8mb4";
         $this->conexion = $this->crearConexion();
-
     }
 
     public function crearConexion()
     {
-
         try {
             $conexion = new PDO($this->dsn, $this->user, $this->pass);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

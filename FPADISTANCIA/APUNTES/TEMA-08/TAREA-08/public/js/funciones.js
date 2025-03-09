@@ -44,7 +44,7 @@ function obtuvimosDatos(datosRespuesta) {
 
     // Si obtuvimos una respuesta, reordenamos los envíos del reparto
     // Cogemos la URL base del documento, quitando los parámetros GET si los hay
-    var url = "http://127.0.0.1/dwes_tema_08/TAREA_08/public/repartos.php";
+    var url = "http://localhost/FPADISTANCIA/APUNTES/TEMA-08/TAREA-08/public/repartos.php";
 
     // Añadimos el código de la lista de reparto
     url += '?action=oEnvios&idLt=' + datosRespuesta['id'];
